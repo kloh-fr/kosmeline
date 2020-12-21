@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-21
+ * @note         Configuration du projet
+ */
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+	== Variables
+		-- Couleurs
+		-- Fonts
+		-- Dimensions
+	== Fonctions et mixins tirés de ROCSSTI
+*/
+
+/* == @section Variables ==================== */
+/* -- @subsection Couleurs ---------- */
+$base-background-color: #000; // Fond de page
+$base-text-color: #fff; // Couleur du texte
+
+$link-color: #fff; // Couleur des liens
+
+$color-1: #010101;
+$color-2: #060606;
+$color-3: #090909;
+$color-4: #999;
+
+/* Tableaux */
+$table-border-color: #333;
+
+/* -- @subsection Fonts ---------- */
+/**
+ * Par défaut, on utilise les polices système
+ * @see https://bitsofco.de/the-new-system-font-stack/
+ * @note Les variables par défaut sont utilisées dans _base.scss
+ */
+$font-stack-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-stack-headings: "inglobal";
+
+/* Titres : valeurs en pixels */
+$size-h1: 32;
+$size-h2: 28;
+$size-h3: 24;
+
+/* -- @subsection Dimensions ---------- */
+/**
+ * Toutes les valeurs sont en pixels
+ */
+/* Layout */
+$page-width: 1180;
+$content-padding: 4rem;
+
+/* == @section Fonctions et mixins tirés de ROCSSTI ==================== */
+/**
+ * @note ROCSSTI : une base CSS par Nicolas Hoffmann http://rocssti.net/
+ * @note inspiré par http://www.knacss.com/
+ * @note ROCSSTI est sous licence CC-BY : http://creativecommons.org/licenses/by/3.0/fr/
+ */
+
+/* Ne pas modifier */
+$base-font: 16; // si "14" alors 1em = 14px
+$line-height: 1.5;
+
+$root-default-font-size: 16;
+
+/**
+ * Rythme vertical
+ * Valeurs possibles : 'double_top_single_bottom', 'single_top', 'single_bottom'
+ * Calculs via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil
+ */
+$vertical-rythm: "single_top";
+
+/* Fonctions Sass : pas touche ! */
+@function em($px, $base: $base-font) {
+	@return ($px / $base) * 1em;
+}
+
+@function em-mq($px, $base: $root-default-font-size) {
+	@return ($px / $base) * 1em;
+}
+
+@function line-height($font-size, $base-height, $base-font, $type-vr) {
+	$coef: ceil(1 / ($base-height * $base-font / $font-size));
+	$height: ($base-font * $base-height / $font-size);
+
+	@return ($height * $coef);
+}
+
+@function margin-em($font-size, $base-height, $base-font, $type-vr) {
+	$coef: ceil(1 / ($base-height * $base-font / $font-size));
+	$other_coef: ceil($base-height * $base-font / $font-size);
+	$height: ($base-font * $base-height / $font-size);
+	$margin: ($height * $coef);
+
+	@if $type-vr == "double_top_single_bottom" {
+		@return (
+			($margin * $other_coef) * 1em 0 (($margin/2) * $other_coef) * 1em 0
+		);
+	} @else if $type-vr == "single_bottom" {
+		@return (0 0 (($margin/2) * $other_coef) * 1em 0);
+	} @else if $type-vr == "single_top" {
+		@return ((($margin/2) * $other_coef) * 1em 0 0 0);
+	}
+}
+
+@function margin-em-other($font-size, $base-height, $base-font, $type-vr) {
+	$coef: ceil(1 / ($base-height * $base-font / $font-size));
+	$height: ($base-font * $base-height / $font-size);
+	$margin: ($height * $coef);
+
+	@return (($margin) * 1em 0);
+}
+
+/* Mixins */
+@mixin flow-hr($value, $type-vr: $vertical-rythm) {
+	font-size: em($value);
+	line-height: line-height($value, $line-height, $base-font, $type-vr);
+	margin: margin-em($value, $line-height, $base-font, $type-vr);
+}
+
+@mixin flow-other($value, $type-vr: $vertical-rythm) {
+	font-size: em($value);
+	line-height: line-height($value, $line-height, $base-font, $type-vr);
+	margin: margin-em-other($value, $line-height, $base-font, $type-vr);
+}

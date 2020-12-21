@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-21
+ * @note         Layout
+ */
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+	== Mise en forme de base
+	== Page
+	== Entête
+	== Navigation
+	== Recherche
+	== Zone de contenu
+		-- Contenu
+		-- Colonne latérale
+	== Pied de page
+*/
+
+/* == @section Mise en forme de base ==================== */
+body {
+	background-color: $base-background-color;
+	color: $base-text-color;
+}
+
+a {
+	color: $link-color;
+	text-decoration: underline;
+
+	&:visited {
+		text-decoration: underline dotted;
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:active {
+	}
+}
+
+ul {
+	list-style-image: url("../img/etoile.svg");
+}
+
+address {
+	font-style: normal;
+}
+
+/* == @section Page ==================== */
+.site-wrapper {
+	margin: auto;
+	max-width: em($page-width);
+	width: 100%;
+}
+
+.site-background {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	background-image: radial-gradient(
+		circle at top center,
+		rgba(255, 255, 255, 0.075),
+		rgba(0, 0, 0, 1) 50%
+	);
+}
+
+#sky {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	animation: rotation 360s linear infinite;
+}
+
+@keyframes rotation {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(359deg);
+	}
+}
+
+/* == @section Entête ==================== */
+.site-header {
+	padding: 2em $content-padding;
+	text-align: center;
+
+	/**
+	 * Titre ou logo
+	 * Balise <h1> sur la home : balise <p> sur le reste du site
+	 */
+	&_title {
+	}
+
+	/**
+	 * Description du site
+	 * Renseignée dans les paramètres WordPress.
+	 * Si rien de renseigné, rien n'est affiché.
+	 */
+	&_description {
+		font-family: $font-stack-headings;
+		font-size: 2rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	&_logo {
+		width: 40rem;
+	}
+}
+
+/* == @section Navigation ==================== */
+/* Voir _navigation.scss */
+
+/* == @section Recherche ==================== */
+.site-search {
+}
+
+/* == @section Zone de contenu ==================== */
+/**
+ * Contient le contenu et la colonne latérale
+ */
+.site-content-wrapper {
+	border-bottom: 2px solid $base-text-color;
+	background-color: $color-1;
+}
+
+/* -- @subsection Contenu ----------------------------- */
+.site-content {
+}
+
+.site-main {
+}
+
+article.page {
+	padding: $content-padding;
+}
+
+/* -- @subsection Colonne latérale ----------------------------- */
+/**
+ * Autre classe CSS sur la sidebar 'widget-area'
+ */
+.site-sidebar {
+}
+
+/* == @section Pied de page ==================== */
+.site-footer {
+	padding: 3em 1em;
+	text-align: center;
+
+	&_links {
+		.menu {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		.menu-item {
+			display: inline-block;
+
+			&:not(:first-child)::before {
+				content: "";
+				display: inline-block;
+				margin-right: 0.25em;
+				width: 1em;
+				height: 1em;
+				background-image: url("../img/etoile.svg");
+				background-size: 100%;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	/**
+	 * Informations sur le site : copyright, etc.
+	 */
+	&_info {
+	}
+}

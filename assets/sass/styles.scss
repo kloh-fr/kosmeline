@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-21
+ */
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+	== Config
+	== CDI
+	== Plugins
+	== Projet
+		-- Fonts
+		-- Layout
+*/
+
+/* == @section Config  ==================== */
+/* @note Le fichier de config est situé dans le répertoire du projet */
+/* @note Toutes les variables sont définies dans ce fichier et doivent être modifiées ici uniquement */
+@import "config";
+
+/* == @section Utilities ==================== */
+/**
+ * @note   CSS de base pour tous les projets
+ * @author Felipe Roy, Luc Poupard
+ * @note   Les fichiers suivants ne doivent pas être modifiés !
+ *         Seuls les fichiers du Projet doivent être modifiés.
+ */
+@import "utilities/normalize";
+@import "utilities/base";
+@import "utilities/utilities";
+@import "utilities/form";
+@import "utilities/wordpress";
+@import "utilities/wordpress-blocks";
+
+/* == @section Plugins  ==================== */
+/* @note Import des styles d'outils ou composants tierces (ex: jQuery) */
+
+/* == @section Projet  ==================== */
+/**
+ * @note   Styles spécifiques au projet
+ * @author Luc Poupard
+ */
+
+/* -- @subsection Fonts ---------- */
+@import "font";
+
+/* -- @subsection Layout ---------- */
+@import "layout";
+@import "navigation";
+// @import "woocommerce";

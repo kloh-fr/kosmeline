@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-21
+ * @note         Styles de base pour les formulaires
+ */
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+	== Styles de base
+*/
+
+/* == @section Styles de base ==================== */
+/* Supprimer la croix pour effacer la valeur d'un champ (IE) */
+::-ms-clear {
+	display: none;
+}
+
+/**
+ * Éviter le zoom lorsqu'on prend le focus sur un champ sur iOS
+ * @see http://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone
+ */
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+	select,
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"] {
+		font-size: em(16);
+	}
+}
+
+/**
+ * Désactiver les arrondis sur iOS
+ */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+	-webkit-appearance: none;
+}
+
+/**
+ * Styler les placeholder
+ * #see http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css
+ */
+/* WebKit, Blink, Edge */
+::-webkit-input-placeholder {
+}
+
+/* Mozilla Firefox 19+ */
+::-moz-placeholder {
+}
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+}
+
+/* On limite le resize des textarea dans le sens veritcal pour éviter de tout péter */
+textarea {
+	resize: vertical;
+}
