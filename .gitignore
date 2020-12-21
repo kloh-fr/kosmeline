@@ -1,0 +1,27 @@
+# ignore everything in "conf" and "logs"
+conf/*
+logs/*
+
+# ignore everything in "public", except:
+# "wp-content" directory
+app/public/*
+!app/public/wp-content/
+
+# ignore everything in "wp-content", except "themes" directory
+app/public/wp-content/*
+!app/public/wp-content/themes/
+
+# ignore everything in "themes", except "kosmeline" theme
+app/public/wp-content/themes/*
+!app/public/wp-content/themes/kosmeline/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore Local config file
+local-site.json
