@@ -20,6 +20,7 @@
 		-- Images à la Une
 		-- Balise <title>
 		-- Flux RSS
+		-- WooCommerce
 		-- Champs de formulaire HTML5
 		-- Content width
 	== Widgets
@@ -82,6 +83,13 @@ function kosmeline_setup() {
 	 * On ajoute les adresses de flux dans <head>
 	 */
 	// add_theme_support( 'automatic-feed-links' );
+
+	/* -- @subsection WooCommerce -------------------- */
+	/**
+	 * On ajoute le support de WooCommerce
+	 * https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
+	 */
+	add_theme_support('woocommerce');
 
 	/* -- @subsection Champs de formulaire HTML5 -------------------- */
 	/**
