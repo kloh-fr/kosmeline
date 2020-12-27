@@ -8,9 +8,6 @@
 
 /* Basket in menu */
 .cart-contents-count {
-	position: absolute;
-	top: 50%;
-	right: 4rem;
 	display: inline-block;
 	margin-top: -1.5rem;
 	width: 3rem;
@@ -20,7 +17,6 @@
 	color: $base-background-color;
 	text-align: center;
 	text-indent: -0.2rem;
-	line-height: 1.4;
 
 	> span {
 		display: none;
@@ -29,8 +25,6 @@
 
 .menu-basket {
 	a {
-		padding-right: 8rem;
-
 		&:hover,
 		&:focus {
 			.cart-contents-count {

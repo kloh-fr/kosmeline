@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-21
+ * @lastmodified 2020-12-27
  * @note         Layout
  */
 
@@ -52,6 +52,16 @@ address {
 	font-style: normal;
 }
 
+svg[aria-hidden="true"]:not(.svg-sprite) {
+	display: none;
+}
+
+.svg-sprite {
+	use {
+		fill: currentColor;
+	}
+}
+
 /* == @section Page ==================== */
 .site-wrapper {
 	margin: auto;
@@ -92,7 +102,6 @@ address {
 /* == @section Entête ==================== */
 .site-header {
 	padding: 2em $content-padding;
-	text-align: center;
 
 	/**
 	 * Titre ou logo
@@ -115,6 +124,18 @@ address {
 
 	&_logo {
 		width: 40rem;
+	}
+}
+
+@mixin header-small {
+	.site-header {
+		padding-right: 8rem;
+	}
+}
+
+@mixin header-large {
+	.site-header {
+		text-align: center;
 	}
 }
 

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-27
+ * @note         Media queries
+ */
+
+@media (max-width: em-mq(899)) {
+	@include header-small;
+	@include nav-small;
+}
+
+@media (min-width: em-mq(900)) {
+	@include header-large;
+	@include nav-large;
+}

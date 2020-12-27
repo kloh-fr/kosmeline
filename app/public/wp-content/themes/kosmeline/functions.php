@@ -136,7 +136,7 @@ function kosmeline_scripts() {
 		'menu-mobile',
 		get_stylesheet_directory_uri() . '/js/navigation.js',
 		array( 'wp-i18n' ),
-		null,
+		'20201271410',
 		true
 	);
 

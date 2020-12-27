@@ -45,6 +45,11 @@
 
 <body <?php body_class(); ?> role="document">
 	<?php wp_body_open(); ?>
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" aria-hidden="true">
+		<symbol id="fleche">
+			<path d="M47.1 13c-.1.1-.4.3-20.8 15.7l-1.3 1-1.3-1C5.4 14.9 3.1 13.1 2.9 13 1.4 11.8.5 11.7.3 11.7H.1c.1.2.3.5.6 1C16.6 35.4 21 38.1 22 38.4h6c1-.2 5.3-2.9 21.4-25.7.3-.5.5-.8.6-1h-.2c-.3-.1-1.2.1-2.7 1.3z" />
+		</symbol>
+	</svg>
 
 	<div class="site-background"><canvas id="sky"></canvas></div>
 

@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-21
+ * @lastmodified 2020-12-27
  * @note         Navigation
  */
 
@@ -25,7 +25,7 @@
 
 	a,
 	button {
-		padding: 1.25rem $content-padding;
+		padding: $menu-item-padding-top $content-padding;
 		white-space: nowrap;
 
 		&:hover,
@@ -41,26 +41,25 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		text-align: center;
 		text-transform: uppercase;
 	}
 
 	li {
 		position: relative;
-		display: inline-block;
 	}
 
 	.sub-menu li {
 		display: block;
 	}
 
+	/* Menu courant */
 	.menu > .current_page_item,
-	.menu > .current_page_parent {
-		&::after {
+	.menu > .current_page_parent,
+	.menu > .current-menu-ancestor {
+		> a::after {
 			content: "";
 			position: absolute;
-			bottom: calc(-1.5rem - 1px);
-			left: calc(50% - 1.5rem);
+			display: inline-block;
 			width: 3rem;
 			height: 3rem;
 			background-image: url("../img/etoile.svg");
@@ -69,21 +68,22 @@
 	}
 }
 
+/* Conteneur du menu */
 .primary-menu-container {
-	margin: 2rem 0 0;
-	border-bottom: 2px solid $base-text-color;
 	font-family: $font-stack-headings;
 	font-size: 2rem;
 }
 
 /* Sous-menus */
 .menu-item-has-children {
-	position: relative;
-
+	&:focus-within,
 	&.open {
-		> a {
+		color: $base-background-color;
+
+		> a,
+		> button {
 			background-color: $base-text-color;
-			color: $base-background-color;
+			color: currentColor;
 		}
 	}
 
@@ -92,14 +92,6 @@
 	}
 
 	> ul {
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		transform: translate(-50%);
-		border: 2px solid $base-text-color;
-		background-color: $base-background-color;
-		text-align: left;
-
 		a {
 			background-color: $base-text-color;
 			color: $base-background-color;
@@ -111,48 +103,155 @@
 			}
 		}
 	}
+
+	.menu-button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		padding: $menu-item-padding-top 0;
+		color: currentColor;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+
+		.svg-sprite {
+			position: absolute;
+			top: calc(50% - 1rem);
+			left: calc(50% - 1rem);
+			display: block;
+			width: 2rem;
+			height: 2rem;
+		}
+	}
 }
 
-// @media screen and (min-width: 62.5625em) {
-.menu-button,
+/* Bouton menu mobile */
 #mobile-menu-toggle {
-	display: none !important;
+	position: fixed;
+	top: 2rem;
+	right: 1rem;
+	z-index: 2;
+	padding: 0.75rem 1rem;
 }
-// }
 
-/**
-#nav-menu a:visited {
-	color: #000;
+@mixin nav-small {
+	/* Menu mobile */
+	#mobile-menu {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding-top: 7rem;
+		background-color: $base-background-color;
+		z-index: 1;
+		display: none !important;
+
+		.open & {
+			display: block !important;
+		}
+	}
+
+	.site-navigation {
+		/* Menu courant */
+		.menu > .current_page_item,
+		.menu > .current_page_parent,
+		.menu > .current-menu-ancestor {
+			> a::after {
+				top: calc(1em - #{$menu-item-padding-top / 2});
+				left: calc(0.5rem + 1px);
+			}
+		}
+	}
+
+	/* Conteneur du menu */
+	.primary-menu-container {
+		&::before {
+			content: "";
+			display: block;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 2rem;
+			width: 2px;
+			background-color: $base-text-color;
+		}
+	}
+
+	/* Sous-menus */
+	.menu-item-has-children {
+		> ul {
+			margin-left: calc(2rem + 2px);
+		}
+
+		.menu-button {
+			width: 6rem;
+		}
+
+		> a {
+			margin-right: 6rem;
+		}
+	}
 }
-#nav-menu a:hover,
-#nav-menu a:focus,
-#nav-menu button:hover,
-#nav-menu button:focus {
-	color: #8719d2;
+
+@mixin nav-large {
+	/* Bouton menu mobile */
+	#mobile-menu-toggle {
+		display: none !important;
+	}
+
+	.site-navigation {
+		ul {
+			text-align: center;
+		}
+
+		li {
+			display: inline-block;
+		}
+
+		/* Menu courant */
+		.menu > .current_page_item,
+		.menu > .current_page_parent,
+		.menu > .current-menu-ancestor {
+			> a::after {
+				bottom: calc(-1.5rem - 1px);
+				left: calc(50% - 1.5rem);
+				z-index: 1;
+			}
+		}
+	}
+
+	/* Conteneur du menu */
+	.primary-menu-container {
+		margin: 2rem 0 0;
+		border-bottom: 2px solid $base-text-color;
+	}
+
+	/* Sous-menus */
+	.menu-item-has-children {
+		> ul {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%);
+			border: 2px solid $base-text-color;
+			background-color: $base-background-color;
+			text-align: left;
+		}
+
+		.menu-button {
+			width: 4rem;
+			right: 3rem;
+		}
+
+		> a {
+			padding-right: 7rem;
+		}
+	}
 }
-#nav-menu > ul > li {
-	position: relative;
-}
-#nav-menu > ul > li > a,
-#nav-menu > ul > li > button {
-	position: relative;
-	padding-top: 0;
-	padding-right: 0.74074em;
-	padding-bottom: 0.18519em;
-	padding-left: 0.74074em;
-	font-size: 1.5em;
-}
-#nav-menu > ul > li > ul a,
-#nav-menu > ul > li > ul button {
-	padding: 0.2381em 0.95238em;
-	font-size: 1.16667em;
-}
-#nav-menu > ul > li.current-menu-ancestor > a,
-#nav-menu > ul > li.current_page_item > a,
-#nav-menu > ul > li.current-menu-ancestor > button,
-#nav-menu > ul > li.current_page_item > button {
-	color: #000;
-}
+
+/*
 #nav-menu .sprite-fleche:before {
 	position: absolute;
 	right: 0.66667em;
@@ -196,30 +295,8 @@
 		width: 100%;
 		text-align: left;
 	}
-	#mobile-menu {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		padding-top: 5.55556em;
-		background-color: #fff3cf;
-		z-index: 4;
-	}
-	#mobile-menu {
-		display: none !important;
-	}
-	.open #mobile-menu {
-		display: block !important;
-	}
 }
 @media screen and (min-width: 62.5625em) {
-	#nav-menu ul {
-		background-color: #fff;
-	}
-	#nav-menu > ul > li {
-		display: inline-block;
-	}
 	#nav-menu > ul > li:not(.menu-item-has-children) > a:hover:after,
 	#nav-menu > ul > li:not(.menu-item-has-children) > a:focus:after,
 	#nav-menu > ul > li:not(.menu-item-has-children) > button:hover:after,
@@ -249,28 +326,5 @@
 	.sprite-fleche:before {
 		display: none !important;
 	}
-	#nav-menu .menu-item-has-children > ul {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 100%;
-		padding: 0.55556em 0;
-		min-width: 12.22222em;
-		z-index: 3;
-		border: 0.11111em solid #0500d2;
-		-webkit-box-shadow: 0.27778em 0.27778em #8719d2;
-		box-shadow: 0.27778em 0.27778em #8719d2;
-	}
 }
-@media screen and (min-width: 62.5625em) and (max-width: 80em) {
-	#nav-menu > ul > li > a,
-	#nav-menu > ul > li > button {
-		position: relative;
-		padding-top: 0;
-		padding-right: 0.90909em;
-		padding-bottom: 0.22727em;
-		padding-left: 0.90909em;
-		font-size: 1.22222em;
-	}
-}
-/**/
+*/

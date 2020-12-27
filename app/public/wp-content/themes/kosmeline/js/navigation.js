@@ -25,6 +25,7 @@ mobile_menu.insertAdjacentHTML("beforebegin", mobile_toggle);
 		'<button type="button" class="menu-button" aria-haspopup="true" aria-expanded="false">' +
 		"Sous-menu " +
 		link.text +
+		'<svg width="20" height="20" viewBox="0 0 50 50" class="svg-sprite" aria-hidden="true"><use xlink:href="#fleche" /></svg>' +
 		"</button>";
 	var link_href = link.getAttribute("href");
 
