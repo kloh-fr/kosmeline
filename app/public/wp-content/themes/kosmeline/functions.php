@@ -164,7 +164,7 @@ function kosmeline_styles() {
 		'all',
 		get_stylesheet_directory_uri() . '/css/styles.css',
 		false,
-		null,
+		'202012271840',
 		'all'
 	);
 
