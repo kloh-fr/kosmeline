@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-27
+ * @note         Variables
+ */
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+	== Couleurs
+	== Fonts
+	== Dimensions
+*/
+
+/* == @section @subsection Couleurs ==================== */
+$base-background-color: #000; // Fond de page
+$base-text-color: #fff; // Couleur du texte
+
+$link-color: #fff; // Couleur des liens
+
+$color-1: #010101;
+$color-2: #060606;
+$color-3: #090909;
+$color-4: #999;
+
+/* Tableaux */
+$table-border-color: #333;
+
+/* == @section @subsection Fonts ==================== */
+/**
+ * Par défaut, on utilise les polices système
+ * @see https://bitsofco.de/the-new-system-font-stack/
+ * @note Les variables par défaut sont utilisées dans _base.scss
+ */
+$font-stack-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-stack-headings: "inglobal";
+
+/* Titres : valeurs en pixels */
+$size-h1: 32;
+$size-h2: 28;
+$size-h3: 24;
+
+/* == @section @subsection Dimensions ==================== */
+/**
+ * Toutes les valeurs sont en pixels
+ */
+/* Layout */
+$page-width: 1180;
+$content-padding: 4rem;

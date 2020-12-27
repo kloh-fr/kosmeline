@@ -2,53 +2,41 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-21
+ * @lastmodified 2020-12-27
  */
 
 /* ----------------------------- */
 /* Sommaire */
 /* ----------------------------- */
 /*
-	== Config
-	== CDI
+	== Configuration
+	== Utilitaires
 	== Plugins
-	== Projet
-		-- Fonts
-		-- Layout
+	== Layout
+	== Composants
 */
 
-/* == @section Config  ==================== */
-/* @note Le fichier de config est situé dans le répertoire du projet */
-/* @note Toutes les variables sont définies dans ce fichier et doivent être modifiées ici uniquement */
-@import "config";
+/* == @section Configuration ==================== */
+@import "config/variables";
+@import "config/functions";
+@import "config/mixins";
 
-/* == @section Utilities ==================== */
-/**
- * @note   CSS de base pour tous les projets
- * @author Felipe Roy, Luc Poupard
- * @note   Les fichiers suivants ne doivent pas être modifiés !
- *         Seuls les fichiers du Projet doivent être modifiés.
- */
-@import "utilities/normalize";
+/* == @section Plugins ==================== */
+@import "vendor/normalize";
+@import "vendor/system-font";
+@import "vendor/inglobal-font";
+@import "vendor/wordpress";
+@import "vendor/wordpress-blocks";
+
+/* == @section Utilitaires ==================== */
 @import "utilities/base";
 @import "utilities/utilities";
 @import "utilities/form";
-@import "utilities/wordpress";
-@import "utilities/wordpress-blocks";
 
-/* == @section Plugins  ==================== */
-/* @note Import des styles d'outils ou composants tierces (ex: jQuery) */
-
-/* == @section Projet  ==================== */
-/**
- * @note   Styles spécifiques au projet
- * @author Luc Poupard
- */
-
-/* -- @subsection Fonts ---------- */
-@import "font";
-
-/* -- @subsection Layout ---------- */
+/* == @section Layout ==================== */
 @import "layout";
-@import "navigation";
-@import "woocommerce";
+
+/* == @section Composants ==================== */
+@import "components/navigation";
+@import "components/woocommerce";
+

@@ -1,20 +1,11 @@
 @charset "UTF-8";
 /**
- * @author			Luc Poupard
- * @lastmodified	2016-12-07
- * @note			Class utilitaires
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-27
+ * @note         Classes utilitaires
  */
 
-/* ----------------------------- */
-/* Sommaire */
-/* ----------------------------- */
-/*
-	== Alignements
-	== Largeurs
-	== Visibilité
-*/
-
-/* == @section Alignements ==================== */
 .center {
 	text-align: center;
 }
@@ -53,92 +44,6 @@
 	height: 0;
 	clear: both;
 	visibility: hidden;
-}
-
-/* == @section Largeurs ==================== */
-.w10 {
-	width: 10%;
-}
-.w20 {
-	width: 20%;
-}
-.w30 {
-	width: 30%;
-}
-.w40 {
-	width: 40%;
-}
-.w50 {
-	width: 50%;
-}
-.w60 {
-	width: 60%;
-}
-.w70 {
-	width: 70%;
-}
-.w80 {
-	width: 80%;
-}
-.w90 {
-	width: 90%;
-}
-.w100 {
-	width: 100%;
-}
-
-.w20px {
-	width: 20px;
-}
-.w30px {
-	width: 30px;
-}
-.w40px {
-	width: 40px;
-}
-.w50px {
-	width: 50px;
-}
-.w60px {
-	width: 60px;
-}
-.w70px {
-	width: 70px;
-}
-.w80px {
-	width: 80px;
-}
-.w90px {
-	width: 90px;
-}
-.w100px {
-	width: 100px;
-}
-.w120px {
-	width: 120px;
-}
-.w150px {
-	width: 150px;
-}
-.w180px {
-	width: 180px;
-}
-.w200px {
-	width: 200px;
-}
-
-/* == @section Visibilité  ==================== */
-.display-in {
-	display: inline;
-}
-.display-inbl {
-	display: inline-block;
-}
-.display-bl {
-	display: block;
-}
-.display-no {
-	display: none;
 }
 
 /* Pour masquer un élément visuellement et qu'il reste accessible aux moteurs de recherche et technologies d'assistance */

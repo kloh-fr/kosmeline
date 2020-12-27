@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-27
+ * @note         Mixins
+ */
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+	== Mixins tirés de ROCSSTI
+*/
+
+/* == @section Fonctions et mixins tirés de ROCSSTI ==================== */
+/**
+ * @note ROCSSTI : une base CSS par Nicolas Hoffmann http://rocssti.net/
+ * @note inspiré par http://www.knacss.com/
+ * @note ROCSSTI est sous licence CC-BY : http://creativecommons.org/licenses/by/3.0/fr/
+ */
+@mixin flow-hr($value, $type-vr: $vertical-rythm) {
+	font-size: em($value);
+	line-height: line-height($value, $line-height, $base-font, $type-vr);
+	margin: margin-em($value, $line-height, $base-font, $type-vr);
+}
+
+@mixin flow-other($value, $type-vr: $vertical-rythm) {
+	font-size: em($value);
+	line-height: line-height($value, $line-height, $base-font, $type-vr);
+	margin: margin-em-other($value, $line-height, $base-font, $type-vr);
+}
