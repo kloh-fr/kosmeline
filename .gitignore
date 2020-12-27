@@ -25,3 +25,6 @@ node_modules/
 
 # ignore Local config file
 local-site.json
+
+# ignore compiled CSS files
+app/public/wp-content/themes/kosmeline/css/*
