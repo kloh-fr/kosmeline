@@ -110,20 +110,14 @@ add_shortcode( 'woo_cart_but', 'woo_cart_but' );
 function woo_cart_but() {
 	ob_start();
 
-	// Variable pour le nombre de produits au panier
 	$cart_count = WC()->cart->cart_contents_count;
-
-	if ( $cart_count > 0 ) { ?>
+	?>
 
 <span class="cart-contents-count">
 	<?php echo sprintf( _n( '%d <span>item</span>', '%d <span>items</span>', $cart_count, 'kosmeline' ), $cart_count ); ?>
 </span>
 
-<?php } else { ?>
-
-<span class="cart-contents-count"></span>
-
-<?php }
+<?php
 	return ob_get_clean();
 }
 
@@ -134,18 +128,13 @@ function woo_cart_but_count( $fragments ) {
 	ob_start();
 
 	$cart_count = WC()->cart->cart_contents_count;
-
-	if ( $cart_count > 0 ) { ?>
+	?>
 
 <span class="cart-contents-count">
 	<?php echo sprintf( _n( '%d <span>item</span>', '%d <span>items</span>', $cart_count, 'kosmeline' ), $cart_count ); ?>
 </span>
 
-<?php } else { ?>
-
-<span class="cart-contents-count"></span>
-
-<?php }
+<?php
 	$fragments['.cart-contents-count'] = ob_get_clean();
 
 	return $fragments;
