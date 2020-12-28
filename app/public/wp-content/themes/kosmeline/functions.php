@@ -135,8 +135,8 @@ function kosmeline_scripts() {
 	wp_register_script(
 		'menu-mobile',
 		get_stylesheet_directory_uri() . '/js/navigation.js',
-		array( 'wp-i18n' ),
-		'20201271410',
+		array(),
+		'202012282045',
 		true
 	);
 

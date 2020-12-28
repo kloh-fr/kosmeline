@@ -73,21 +73,19 @@
 			<?php endif; ?>
 		</header>
 
-		<div id="mobile-menu-container" class="site-navigation-container">
+		<div id="site-menu"">
+			<nav id=" site-navigation" class="site-navigation" role="navigation">
+			<button type="button" id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
+				<span><?php esc_html_e( 'Menu', 'kosmeline' ); ?></span>
+			</button>
 			<div id="mobile-menu">
-				<div id="site-menu">
-					<?php /* Cette div sert pour le lien d'évitement vers la navigation. Ne rien mettre entre #site-menu et #site-navigation */ ?>
-				</div>
-				<nav id="site-navigation" class="site-navigation" role="navigation">
-					<?php wp_nav_menu( array(
-						'theme_location'  => 'primary',
-						'menu_id'         => 'primary-menu',
-						'container'       => 'div',
-						'container_id'    => 'nav-menu',
-						'container_class' => 'primary-menu-container'
-					) ); ?>
-				</nav>
+				<?php wp_nav_menu( array(
+					'theme_location'  => 'primary',
+					'menu_id'         => 'primary-menu',
+					'container'       => ''
+				) ); ?>
 			</div>
+			</nav>
 		</div>
 
 		<!-- <div id="site-search" class="site-search">
