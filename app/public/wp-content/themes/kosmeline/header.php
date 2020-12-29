@@ -43,7 +43,7 @@
 	<meta property="og:locale" content="fr_CH" />
 </head>
 
-<body <?php body_class(); ?> role="document">
+<body <?php body_class(); ?> role="document" itemscope itemtype="https://schema.org/WebPage">
 	<?php wp_body_open(); ?>
 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" aria-hidden="true">
 		<symbol id="fleche">
