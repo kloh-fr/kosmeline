@@ -90,6 +90,25 @@ function woocommerce_template_single_description() {
 }
 
 /**
+ * Titre du produit
+ */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title_update', 5 );
+function woocommerce_template_single_title_update() {
+	$type = get_field( 'produit_type' );
+
+	echo '<h1 class="product_title entry-title">';
+
+	if( $type ) {
+		echo $type . ' <span class="kosmeline-product-title">' . esc_html( get_the_title() ) . '</span>';
+	} else {
+		echo esc_html( get_the_title() );
+	}
+
+	echo '</h1>';
+}
+
+/**
  * Affichage du volume ou du poids sur le détail du produit
  */
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_volume', 20 );
@@ -128,6 +147,22 @@ function woocommerce_template_single_volume() {
  */
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt', 1 );
 
+
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title_update', 10 );
+function woocommerce_template_loop_product_title_update() {
+	$type = get_field( 'produit_type' );
+
+	echo '<h2 class="woocommerce-loop-product__title">';
+
+	if( $type ) {
+		echo $type . ' <span class="kosmeline-product-title">' . esc_html( get_the_title() ) . '</span>';
+	} else {
+		echo esc_html( get_the_title() );
+	}
+
+	echo '</h2>';
+}
 
 /**
  * Montrer le panier (contenu + mise à jour AJAX)

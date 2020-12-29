@@ -205,6 +205,17 @@
 	}
 }
 
+.kosmeline-product-title {
+	display: block;
+
+	&::before {
+		content: "\0000AB\0000A0";
+	}
+	&::after {
+		content: "\0000A0\0000BB";
+	}
+}
+
 .product-infos {
 	color: $color-4;
 
