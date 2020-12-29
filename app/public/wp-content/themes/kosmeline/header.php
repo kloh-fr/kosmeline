@@ -84,9 +84,9 @@
 
 	<div class="site-wrapper">
 		<header id="site-header" class="site-header" role="banner">
-			<div class="site-header_title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php bloginfo( 'template_directory' ); ?>/img/logo.svg" width="370" height="77" alt="<?php bloginfo( 'name' ); ?>" class="site-header_logo" />
+			<div class="site-header_title" itemscope itemtype="https://schema.org/Organization">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url" rel="home">
+					<img src="<?php bloginfo( 'template_directory' ); ?>/img/logo.svg" width="370" height="77" alt="<?php bloginfo( 'name' ); ?>" itemprop="logo" class="site-header_logo" />
 				</a>
 			</div>
 
