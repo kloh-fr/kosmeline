@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kosméline\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-12-29 14:05+0100\n"
-"PO-Revision-Date: 2020-12-29 14:06+0100\n"
+"POT-Creation-Date: 2020-12-29 17:13+0100\n"
+"PO-Revision-Date: 2020-12-29 17:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: Luc Poupard\n"
 "Language: fr_FR\n"
@@ -127,36 +127,36 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 "Laisser un commentaire<span class=\"screen-reader-text\"> sur %s</span>"
 
-#: functions/front_woocommerce.php:102
+#: functions/front_woocommerce.php:121
 msgid "Weight: "
 msgstr "Poids&nbsp;: "
 
-#: functions/front_woocommerce.php:103
+#: functions/front_woocommerce.php:122
 #, php-format
 msgid "%1$s&nbsp;<abbr title=\"grammes\">g</abbr>"
 msgstr ""
 
-#: functions/front_woocommerce.php:109
+#: functions/front_woocommerce.php:128
 msgid "Volume: "
 msgstr "Volume&nbsp;: "
 
-#: functions/front_woocommerce.php:110
+#: functions/front_woocommerce.php:129
 #, php-format
 msgid "%1$s&nbsp;<abbr title=\"millilitres\">ml</abbr>"
 msgstr ""
 
-#: functions/front_woocommerce.php:132 header.php:77
+#: functions/front_woocommerce.php:157 header.php:77
 #, php-format
 msgid "%d <span>item</span>"
 msgid_plural "%d <span>items</span>"
 msgstr[0] "%d <span>article</span>"
 msgstr[1] "%d <span>articles</span>"
 
-#: functions/front_woocommerce.php:164 functions/front_woocommerce.php:180
+#: functions/front_woocommerce.php:193 functions/front_woocommerce.php:214
 msgid "Advice use"
 msgstr "Conseils d&rsquo;utilisation"
 
-#: functions/front_woocommerce.php:170 functions/front_woocommerce.php:185
+#: functions/front_woocommerce.php:201 functions/front_woocommerce.php:221
 msgid "Composition"
 msgstr "Composition"
 
@@ -1317,6 +1317,10 @@ msgstr ""
 #: woocommerce/single-product/review-meta.php:37
 msgid "verified owner"
 msgstr ""
+
+#: woocommerce/single-product/stock.php:23
+msgid "Availability: "
+msgstr "Disponibilité&nbsp;: "
 
 #: woocommerce/single-product/tabs/description.php:22
 msgid "Description"

@@ -94,22 +94,33 @@ function woocommerce_template_single_description() {
  */
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_volume', 20 );
 function woocommerce_template_single_volume() {
+	global $product;
+
 	$produit_poids = get_field( 'produit_poids' );
 	$produit_volume = get_field( 'produit_volume' );
 
+	echo '<dl class="product-infos">';
+
 	if( $produit_poids ) {
-		echo '<dl class="product-capacity">';
-		echo '<dt>' . __( 'Weight: ', 'kosmeline' ) . '</dt>';
-		echo '<dd>' . sprintf( __( '%1$s&nbsp;<abbr title="grammes">g</abbr>', 'kosmeline' ), $produit_poids  ) . '</dd>';
-		echo '</dl>';
+		echo '<div>
+				<dt>' . __( 'Weight: ', 'kosmeline' ) . '</dt>
+				<dd>' . sprintf( __( '%1$s&nbsp;<abbr title="grammes">g</abbr>', 'kosmeline' ), $produit_poids  ) . '</dd>
+			</div>';
 	}
 
 	if( $produit_volume ) {
-		echo '<dl class="product-capacity">';
-		echo '<dt>' . __( 'Volume: ', 'kosmeline' ) . '</dt>';
-		echo '<dd>' . sprintf( __( '%1$s&nbsp;<abbr title="millilitres">ml</abbr>', 'kosmeline' ), $produit_volume  ) . '</dd>';
-		echo '</dl>';
+		echo '<div>
+				<dt>' . __( 'Volume: ', 'kosmeline' ) . '</dt>
+				<dd>' . sprintf( __( '%1$s&nbsp;<abbr title="millilitres">ml</abbr>', 'kosmeline' ), $produit_volume  ) . '</dd>
+			</div>';
+
 	}
+
+	echo '<div>';
+	echo wc_get_stock_html( $product ); // WPCS: XSS ok.
+	echo '</div>';
+	echo '</dl>';
+}
 }
 
 /**

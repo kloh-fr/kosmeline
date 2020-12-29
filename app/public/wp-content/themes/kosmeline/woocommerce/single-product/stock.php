@@ -20,4 +20,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<p class="stock <?php echo esc_attr( $class ); ?>"><?php echo wp_kses_post( $availability ); ?></p>
+<dt><?php echo __( 'Availability: ', 'kosmeline' ) ?></dt>
+<dd class="stock <?php echo esc_attr( $class ); ?>"><?php echo wp_kses_post( $availability ); ?></dd>
