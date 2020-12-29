@@ -160,28 +160,39 @@ function woo_remove_product_tabs( $tabs ) {
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
 // Adds the new tab
 function woo_new_product_tab( $tabs ) {
-	$tabs['advice_tab'] = array(
-		'title'    => __( 'Advice use', 'kosmeline' ),
-		'priority' => 10,
-		'callback' => 'woo_advice_product_tab_content'
-	);
+	$advice = get_field( 'produit_utilisation' );
+	$composition = get_field( 'produit_composition' );
 
-	$tabs['composition_tab'] = array(
-		'title'    => __( 'Composition', 'kosmeline' ),
-		'priority' => 20,
-		'callback' => 'woo_composition_product_tab_content'
-	);
+	if( $advice ) {
+		$tabs['advice_tab'] = array(
+			'title'    => __( 'Advice use', 'kosmeline' ),
+			'priority' => 10,
+			'callback' => 'woo_advice_product_tab_content'
+		);
+	}
+
+	if( $composition ) {
+		$tabs['composition_tab'] = array(
+			'title'    => __( 'Composition', 'kosmeline' ),
+			'priority' => 20,
+			'callback' => 'woo_composition_product_tab_content'
+		);
+	}
 
 	return $tabs;
 }
 
 // The new tab content
 function woo_advice_product_tab_content() {
+	$advice = get_field( 'produit_utilisation' );
+
 	echo '<h2 class="screen-reader-text">' . __( 'Advice use', 'kosmeline' ) . '</h2>';
-	the_field( 'produit_utilisation' );
+	echo $advice;
 }
 
 function woo_composition_product_tab_content() {
+	$composition = get_field( 'produit_composition' );
+
 	echo '<h2 class="screen-reader-text">' . __( 'Composition', 'kosmeline' ) . '</h2>';
-	the_field( 'produit_composition' );
+	echo $composition;
 }
