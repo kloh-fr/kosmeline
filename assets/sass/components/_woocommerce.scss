@@ -693,3 +693,21 @@ textarea {
 		width: calc(50% - 3rem);
 	}
 }
+
+/* Account pages */
+.woocommerce-account {
+	.woocommerce-MyAccount-navigation,
+	.woocommerce-MyAccount-content {
+		margin-top: 3rem;
+	}
+
+	.woocommerce-MyAccount-navigation {
+		float: left;
+		width: 30%;
+	}
+
+	.woocommerce-MyAccount-content {
+		float: right;
+		width: 68%;
+	}
+}
