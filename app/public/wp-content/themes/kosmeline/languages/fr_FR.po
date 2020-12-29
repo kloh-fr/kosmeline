@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kosméline\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-12-28 23:17+0100\n"
-"PO-Revision-Date: 2020-12-28 23:19+0100\n"
+"POT-Creation-Date: 2020-12-29 14:05+0100\n"
+"PO-Revision-Date: 2020-12-29 14:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: Luc Poupard\n"
 "Language: fr_FR\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: 401.php:19 403.php:19
 msgid "Oops! You haven&rsquo;t right to see this page."
-msgstr "Oups ! Vous n'avez pas le droit d'accéder à cette page."
+msgstr "Oups ! Vous n&rsquo;avez pas le droit d&rsquo;accéder à cette page."
 
 #: 401.php:23
 msgid "It looks like you need to be authenticated."
@@ -53,7 +53,7 @@ msgid ""
 "below or a search?"
 msgstr ""
 "Il semblerait que rien n&rsquo;ait été trouvé à cet emplacement. Essayez "
-"l&rsquo;un des liens ci-dessous ou faites un recherche ?"
+"l&rsquo;un des liens ci-dessous ou faites un recherche&nbsp;?"
 
 #: comments.php:34
 #, php-format
@@ -127,12 +127,38 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 "Laisser un commentaire<span class=\"screen-reader-text\"> sur %s</span>"
 
-#: functions/front_woocommerce.php:93 header.php:68
+#: functions/front_woocommerce.php:102
+msgid "Weight: "
+msgstr "Poids&nbsp;: "
+
+#: functions/front_woocommerce.php:103
+#, php-format
+msgid "%1$s&nbsp;<abbr title=\"grammes\">g</abbr>"
+msgstr ""
+
+#: functions/front_woocommerce.php:109
+msgid "Volume: "
+msgstr "Volume&nbsp;: "
+
+#: functions/front_woocommerce.php:110
+#, php-format
+msgid "%1$s&nbsp;<abbr title=\"millilitres\">ml</abbr>"
+msgstr ""
+
+#: functions/front_woocommerce.php:132 header.php:77
 #, php-format
 msgid "%d <span>item</span>"
 msgid_plural "%d <span>items</span>"
 msgstr[0] "%d <span>article</span>"
 msgstr[1] "%d <span>articles</span>"
+
+#: functions/front_woocommerce.php:164 functions/front_woocommerce.php:180
+msgid "Advice use"
+msgstr "Conseils d&rsquo;utilisation"
+
+#: functions/front_woocommerce.php:170 functions/front_woocommerce.php:185
+msgid "Composition"
+msgstr "Composition"
 
 #: header.php:59
 msgid "Skip to navigation"
@@ -146,15 +172,15 @@ msgstr "Aller au contenu"
 msgid "Skip to search"
 msgstr "Aller à la recherche"
 
-#: header.php:66
-msgid "Basket"
-msgstr "Panier"
-
-#: header.php:71
+#: header.php:67
 msgid "Account"
 msgstr "Compte"
 
-#: header.php:96
+#: header.php:75
+msgid "Basket"
+msgstr "Panier"
+
+#: header.php:104
 msgid "Menu"
 msgstr "Menu"
 

@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-28
+ * @lastmodified 2020-12-29
  * @note         Layout
  */
 
@@ -50,6 +50,10 @@ ul {
 
 address {
 	font-style: normal;
+}
+
+abbr[title] {
+	cursor: help;
 }
 
 svg[aria-hidden="true"]:not(.svg-sprite) {

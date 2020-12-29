@@ -1,0 +1,105 @@
+[
+    {
+        "key": "group_5feaeb8ae825f",
+        "title": "Informations produit",
+        "fields": [
+            {
+                "key": "field_5feaeba084dec",
+                "label": "Conseils d'utilisation",
+                "name": "produit_utilisation",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_5feaebf484ded",
+                "label": "Composition",
+                "name": "produit_composition",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_5feaf77ee43bc",
+                "label": "Poids",
+                "name": "produit_poids",
+                "type": "number",
+                "instructions": "Poids du produit en grammes",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "g",
+                "min": "",
+                "max": "",
+                "step": ""
+            },
+            {
+                "key": "field_5feaf7a7e43bd",
+                "label": "Volume",
+                "name": "produit_volume",
+                "type": "number",
+                "instructions": "Volume du produit en millilitres",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "ml",
+                "min": "",
+                "max": "",
+                "step": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

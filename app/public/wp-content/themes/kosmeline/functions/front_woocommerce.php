@@ -79,6 +79,45 @@ function wc_remove_link_on_thumbnails( $html ) {
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+/**
+ * Affichage de la description au lieu de la description courte
+ */
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_description', 20 );
+function woocommerce_template_single_description() {
+	the_content();
+}
+
+/**
+ * Affichage du volume ou du poids sur le détail du produit
+ */
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_volume', 20 );
+function woocommerce_template_single_volume() {
+	$produit_poids = get_field( 'produit_poids' );
+	$produit_volume = get_field( 'produit_volume' );
+
+	if( $produit_poids ) {
+		echo '<dl class="product-capacity">';
+		echo '<dt>' . __( 'Weight: ', 'kosmeline' ) . '</dt>';
+		echo '<dd>' . sprintf( __( '%1$s&nbsp;<abbr title="grammes">g</abbr>', 'kosmeline' ), $produit_poids  ) . '</dd>';
+		echo '</dl>';
+	}
+
+	if( $produit_volume ) {
+		echo '<dl class="product-capacity">';
+		echo '<dt>' . __( 'Volume: ', 'kosmeline' ) . '</dt>';
+		echo '<dd>' . sprintf( __( '%1$s&nbsp;<abbr title="millilitres">ml</abbr>', 'kosmeline' ), $produit_volume  ) . '</dd>';
+		echo '</dl>';
+	}
+}
+
+/**
+ * Affichage de la description courte sur la liste des produits
+ */
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt', 1 );
+
+
 /**
  * Montrer le panier (contenu + mise à jour AJAX)
  * @link https://docs.woocommerce.com/document/show-cart-contents-total/
@@ -96,4 +135,53 @@ function woo_cart_but_count( $fragments ) {
 <?php
 	$fragments['.cart-contents-count'] = ob_get_clean();
 	return $fragments;
+}
+
+/**
+ * Remove product data tabs
+ * @link https://docs.woocommerce.com/document/editing-product-data-tabs/
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+    unset( $tabs['description'] ); // Remove the description tab
+    // unset( $tabs['reviews'] ); // Remove the reviews tab
+    unset( $tabs['additional_information'] ); // Remove the additional information tab
+
+    return $tabs;
+}
+
+/**
+ * Add a custom product data tab
+ * Default tabs priority
+ * - Description: 10
+ * - Additional information: 20
+ * - Reviews: 30
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
+// Adds the new tab
+function woo_new_product_tab( $tabs ) {
+	$tabs['advice_tab'] = array(
+		'title'    => __( 'Advice use', 'kosmeline' ),
+		'priority' => 10,
+		'callback' => 'woo_advice_product_tab_content'
+	);
+
+	$tabs['composition_tab'] = array(
+		'title'    => __( 'Composition', 'kosmeline' ),
+		'priority' => 20,
+		'callback' => 'woo_composition_product_tab_content'
+	);
+
+	return $tabs;
+}
+
+// The new tab content
+function woo_advice_product_tab_content() {
+	echo '<h2 class="screen-reader-text">' . __( 'Advice use', 'kosmeline' ) . '</h2>';
+	the_field( 'produit_utilisation' );
+}
+
+function woo_composition_product_tab_content() {
+	echo '<h2 class="screen-reader-text">' . __( 'Composition', 'kosmeline' ) . '</h2>';
+	the_field( 'produit_composition' );
 }

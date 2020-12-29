@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-28
+ * @lastmodified 2020-12-29
  * @note         Woocommerce
  */
 
@@ -100,7 +100,13 @@
 		}
 	}
 
-	.add_to_cart_button {
+	.woocommerce-product-details__short-description {
+		margin: 0 1rem 2rem 1rem;
+		text-align: left;
+		font-size: 1.6rem;
+	}
+
+	.product_type_simple.button {
 		display: inline-block;
 		margin: 1.5rem auto 2rem;
 		padding: 0.25em 0.5em 0.35em;
@@ -196,6 +202,19 @@
 		img {
 			border: 2px solid $color-4;
 		}
+	}
+}
+
+.product-capacity {
+	color: $color-4;
+
+	dt,
+	dd {
+		display: inline-block;
+	}
+
+	dd {
+		margin-left: 0.4rem;
 	}
 }
 
@@ -553,6 +572,7 @@ input[type="text"],
 input[type="number"],
 input[type="tel"],
 input[type="email"],
+input[type="password"],
 textarea,
 select {
 	display: block;
@@ -624,7 +644,7 @@ textarea {
 	border-top: 2px solid $color-4;
 }
 
-/**/
+/* AJAX loading */
 .blockUI.blockOverlay {
 	background-color: rgba($color-1, 0.85) !important;
 }
