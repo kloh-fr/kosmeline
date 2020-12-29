@@ -140,7 +140,19 @@ function woocommerce_template_single_volume() {
 	echo '</div>';
 	echo '</dl>';
 }
+
+/**
+ * Supprimer UGS sur le détail
+ * @link https://www.skyverge.com/blog/how-to-hide-sku-woocommerce-product-pages/
+ */
+function sv_remove_product_page_skus( $enabled ) {
+	if ( ! is_admin() && is_product() ) {
+		return false;
+	}
+
+	return $enabled;
 }
+add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
 
 /**
  * Affichage de la description courte sur la liste des produits
