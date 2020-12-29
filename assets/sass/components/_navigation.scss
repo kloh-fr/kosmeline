@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-27
+ * @lastmodified 2020-12-28
  * @note         Navigation
  */
 
@@ -193,7 +193,7 @@
 
 		.menu-item-has-children {
 			> ul {
-				top: 0;
+				top: -2px;
 				left: -100vw;
 				transform: unset;
 			}
