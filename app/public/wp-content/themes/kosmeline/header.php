@@ -53,11 +53,36 @@
 
 	<div class="site-background"><canvas id="sky"></canvas></div>
 
-	<div id="site-top" class="site-wrapper">
-		<a href="#site-menu" class="screen-reader-text"><span><?php esc_html_e( 'Skip to navigation', 'kosmeline' ); ?></span></a>
-		<a href="#site-content" class="screen-reader-text"><span><?php esc_html_e( 'Skip to content', 'kosmeline' ); ?></span></a>
-		<!-- <a href="#site-search" class="screen-reader-text"><span><?php esc_html_e( 'Skip to search', 'kosmeline' ); ?></span></a> -->
+	<div id="site-top" class="site-skiplinks-wrapper">
+		<div class="site-skiplinks">
+			<div class="site-skiplinks--left">
+				<a href="#site-menu" class="screen-reader-text"><span><?php esc_html_e( 'Skip to navigation', 'kosmeline' ); ?></span></a>
+				<a href="#site-content" class="screen-reader-text"><span><?php esc_html_e( 'Skip to content', 'kosmeline' ); ?></span></a>
+				<!-- <a href="#site-search" class="screen-reader-text"><span><?php esc_html_e( 'Skip to search', 'kosmeline' ); ?></span></a> -->
+			</div>
 
+			<div class="site-skiplinks--right">
+				<a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
+					<?php if( !is_user_logged_in() ) {
+						esc_html_e( 'Account', 'kosmeline' );
+					} else {
+						$current_user = wp_get_current_user();
+
+						echo $current_user->user_firstname . ' ' . $current_user->user_lastname;
+					} ?>
+				</a>
+				<a href="<?php echo wc_get_cart_url(); ?>" class="site-basket">
+					<?php esc_html_e( 'Basket', 'kosmeline' ); ?>
+					<span class="cart-contents-count">
+						<?php echo sprintf ( _n( '%d <span>item</span>', '%d <span>items</span>', WC()->cart->get_cart_contents_count(), 'kosmeline' ), WC()->cart->get_cart_contents_count() ); ?>
+					</span>
+				</a>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="site-wrapper">
 		<header id="site-header" class="site-header" role="banner">
 			<div class="site-header_title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

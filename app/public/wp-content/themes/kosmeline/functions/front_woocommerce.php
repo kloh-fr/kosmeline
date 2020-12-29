@@ -83,50 +83,9 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_p
  * Montrer le panier (contenu + mise à jour AJAX)
  * @link https://docs.woocommerce.com/document/show-cart-contents-total/
  */
-/*
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
-
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
-	global $woocommerce;
-	ob_start();
-	?>
-<a class="cart-customlocation" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php _e( 'View your shopping cart', 'kosmeline' ); ?>">
-	<?php echo sprintf( _n( '%d item', '%d items', $woocommerce->cart->cart_contents_count, 'kosmeline' ), $woocommerce->cart->cart_contents_count );?>
-	-
-	<?php echo $woocommerce->cart->get_cart_total(); ?>
-</a>
-<?php
-	$fragments['a.cart-customlocation'] = ob_get_clean();
-	return $fragments;
-}
-*/
-
-/**
- * Panier dans le menu
- * @link https://wpbeaches.com/add-woocommerce-cart-icon-to-menu-with-cart-item-count/
- */
-/* Créer le shortcode pour afficher le panier */
-add_shortcode( 'woo_cart_but', 'woo_cart_but' );
-function woo_cart_but() {
-	ob_start();
-
-	$cart_count = WC()->cart->cart_contents_count;
-	?>
-
-<span class="cart-contents-count">
-	<?php echo sprintf( _n( '%d <span>item</span>', '%d <span>items</span>', $cart_count, 'kosmeline' ), $cart_count ); ?>
-</span>
-
-<?php
-	return ob_get_clean();
-}
-
-/* Mettre à jour le nombre de produits dans le panier en AJAX */
-/* @link https://docs.woocommerce.com/document/show-cart-contents-total/ */
 add_filter( 'woocommerce_add_to_cart_fragments', 'woo_cart_but_count' );
 function woo_cart_but_count( $fragments ) {
 	ob_start();
-
 	$cart_count = WC()->cart->cart_contents_count;
 	?>
 
@@ -136,20 +95,5 @@ function woo_cart_but_count( $fragments ) {
 
 <?php
 	$fragments['.cart-contents-count'] = ob_get_clean();
-
 	return $fragments;
 }
-
-/**
- * Ajouter le nombre d'articles sur le lien Panier dans le menu
- * @link https://wordpress.stackexchange.com/questions/102413/how-can-i-add-text-to-a-single-nav-menu-item
- */
-function wpa_filter_nav_menu_objects( $items ){
-	foreach( $items as $item ){
-		if( 'Panier' == $item->title ){
-			$item->title .= do_shortcode('[woo_cart_but]');
-		}
-	}
-	return $items;
-}
-add_filter( 'wp_nav_menu_objects', 'wpa_filter_nav_menu_objects' );

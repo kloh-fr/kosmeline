@@ -2,37 +2,17 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-27
+ * @lastmodified 2020-12-28
  * @note         Woocommerce
  */
 
 /* Basket in menu */
 .cart-contents-count {
+	position: relative;
 	display: inline-block;
-	margin-top: -1.5rem;
-	width: 3rem;
-	height: 3rem;
-	border-radius: 50%;
 	background-color: $base-text-color;
 	color: $base-background-color;
 	text-align: center;
-	text-indent: -0.2rem;
-
-	> span {
-		display: none;
-	}
-}
-
-.menu-basket {
-	a {
-		&:hover,
-		&:focus {
-			.cart-contents-count {
-				background-color: $base-background-color;
-				color: $base-text-color;
-			}
-		}
-	}
 }
 
 /* Breadcrumb */
