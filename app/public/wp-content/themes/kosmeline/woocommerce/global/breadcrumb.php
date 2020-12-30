@@ -29,16 +29,18 @@ if ( ! empty( $breadcrumb ) ) {
 		echo $before;
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
+			echo '<a itemprop="item" href="' . esc_url( $crumb[1] ) . '"><span itemprop="name">' . esc_html( $crumb[0] ) . '</span></a>';
 		} else {
-			echo esc_html( $crumb[0] );
+			echo '<a itemprop="item" href="' . esc_url( $crumb[1] ) . '" aria-current="location"><span itemprop="name">' . esc_html( $crumb[0] ) . '</span></a>';
 		}
 
-		echo $after;
+		echo '<meta itemprop="position" content="' . ( $key + 1 ) . '" />';
 
 		if ( sizeof( $breadcrumb ) !== $key + 1 ) {
 			echo $delimiter;
 		}
+
+		echo $after;
 	}
 
 	echo $wrap_after;

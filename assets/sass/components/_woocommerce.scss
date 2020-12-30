@@ -21,8 +21,26 @@
 	background-color: $color-2;
 	color: $color-4;
 
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
 	a {
 		color: currentColor;
+
+		&[aria-current] {
+			text-decoration: none;
+		}
+	}
+
+	&-delimiter {
+		margin: 0 0.5rem;
 	}
 }
 

@@ -59,6 +59,25 @@ remove_theme_support( 'wc-product-gallery-slider' );
 */
 
 /**
+ * Breadcrumb
+ * @link https://docs.woocommerce.com/document/customise-the-woocommerce-breadcrumb/
+ */
+/**
+ * Change several of the breadcrumb defaults
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
+function jk_woocommerce_breadcrumbs() {
+	return array(
+		'delimiter'   => '<span aria-hidden="true" class="woocommerce-breadcrumb-delimiter">&#47;</span>',
+		'wrap_before' => '<nav class="woocommerce-breadcrumb"><ol aria-label="' . __( 'Breadcrumb', 'kosmeline' ) . '" itemscope itemtype="https://schema.org/BreadcrumbList">',
+		'wrap_after'  => '</ol></nav>',
+		'before'      => '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">',
+		'after'       => '</li>',
+		'home'        => __( 'Home', 'kosmeline' ),
+	);
+}
+
+/**
  * Supprimer les produits associés
  * @link https://docs.woocommerce.com/document/remove-related-posts-output/
  */
