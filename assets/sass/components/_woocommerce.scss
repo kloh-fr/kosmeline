@@ -7,12 +7,40 @@
  */
 
 /* Basket in menu */
-.cart-contents-count {
+$cart-count: 3rem;
+
+.site-skiplinks a.site-basket {
 	position: relative;
+	padding-right: #{$cart-count + 1rem};
+}
+
+.cart-contents-count {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0.5rem;
 	display: inline-block;
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
 	background-color: $base-text-color;
 	color: $base-background-color;
 	text-align: center;
+	line-height: 1.75;
+
+	> span {
+		@extend .visually-hidden;
+	}
+}
+
+.site-basket {
+	&:hover,
+	&:focus {
+		.cart-contents-count {
+			background-color: $base-background-color;
+			color: $base-text-color;
+		}
+	}
 }
 
 /* Breadcrumb */
