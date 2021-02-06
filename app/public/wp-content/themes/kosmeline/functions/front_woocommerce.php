@@ -273,3 +273,14 @@ function woo_composition_product_tab_content() {
 	echo '<h2 class="screen-reader-text">' . __( 'Composition', 'kosmeline' ) . '</h2>';
 	echo $composition;
 }
+
+/**
+ * Remove Downloads entry from account links
+ * @link https://wordpress.org/support/topic/remove-downloads-from-account-page/#post-11057329
+ */
+add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
+function custom_remove_downloads_my_account( $items ) {
+	unset( $items['downloads'] );
+
+	return $items;
+}
