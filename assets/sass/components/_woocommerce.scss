@@ -96,7 +96,6 @@ $cart-count: 3rem;
 .products {
 	clear: both;
 	margin: 0;
-	padding: 0;
 	list-style: none;
 
 	.archive & {
@@ -170,6 +169,14 @@ $cart-count: 3rem;
 			background-color: $base-text-color;
 			color: $color-3;
 		}
+	}
+}
+
+ul.products {
+	padding: 0;
+
+	li::before {
+		display: none;
 	}
 }
 
@@ -337,6 +344,10 @@ $cart-count: 3rem;
 	}
 }
 
+ul.wc-tabs li::before {
+	display: none;
+}
+
 .entry-summary {
 	.price,
 	.cart {
@@ -497,9 +508,13 @@ $cart-count: 3rem;
 	}
 }
 
-.woocommerce-shipping-methods {
+ul.woocommerce-shipping-methods {
 	padding: 0;
 	list-style: none;
+
+	li::before {
+		display: none;
+	}
 
 	input[type="radio"] {
 		margin-right: 0.5rem;

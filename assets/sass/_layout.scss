@@ -44,10 +44,6 @@ a {
 	}
 }
 
-ul {
-	list-style-image: url("../img/etoile.svg");
-}
-
 address {
 	font-style: normal;
 }
@@ -205,6 +201,30 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 }
 
 .site-main {
+	ul {
+		padding-left: 2em;
+		list-style: none;
+
+		li {
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -1.5em;
+				display: inline-block;
+				width: 1em;
+				height: 1.5em;
+				background: {
+					image: url("../img/etoile.svg");
+					repeat: no-repeat;
+					position: center;
+					size: 100%;
+				}
+			}
+		}
+	}
 }
 
 article.page {
