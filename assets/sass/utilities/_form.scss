@@ -74,3 +74,17 @@ button {
 textarea {
 	resize: vertical;
 }
+
+/* Fieldset */
+fieldset {
+	padding: 0;
+	border: none;
+
+	&:not(:first-child) {
+		margin-top: 3rem;
+	}
+}
+
+legend {
+	font-weight: bold;
+}

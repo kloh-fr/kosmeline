@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kosméline\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-12-30 08:59+0100\n"
-"PO-Revision-Date: 2020-12-30 08:59+0100\n"
+"POT-Creation-Date: 2021-02-06 18:23+0100\n"
+"PO-Revision-Date: 2021-02-06 18:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: Luc Poupard\n"
 "Language: fr_FR\n"
@@ -926,45 +926,49 @@ msgid ""
 msgstr ""
 
 #: woocommerce/myaccount/form-edit-account.php:27
+msgid "Personal informations"
+msgstr "Informations personnelles"
+
+#: woocommerce/myaccount/form-edit-account.php:30
 msgid "First name"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:31
+#: woocommerce/myaccount/form-edit-account.php:34
 msgid "Last name"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:37
+#: woocommerce/myaccount/form-edit-account.php:40
 msgid "Display name"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:38
+#: woocommerce/myaccount/form-edit-account.php:41
 msgid ""
 "This will be how your name will be displayed in the account section and in "
 "reviews"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:43
+#: woocommerce/myaccount/form-edit-account.php:46
 #: woocommerce/myaccount/form-login.php:86
 msgid "Email address"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:48
+#: woocommerce/myaccount/form-edit-account.php:52
 msgid "Password change"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:51
+#: woocommerce/myaccount/form-edit-account.php:55
 msgid "Current password (leave blank to leave unchanged)"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:55
+#: woocommerce/myaccount/form-edit-account.php:59
 msgid "New password (leave blank to leave unchanged)"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:59
+#: woocommerce/myaccount/form-edit-account.php:63
 msgid "Confirm new password"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:69
+#: woocommerce/myaccount/form-edit-account.php:73
 msgid "Save changes"
 msgstr ""
 
