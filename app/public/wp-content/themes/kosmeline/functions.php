@@ -136,7 +136,7 @@ function kosmeline_scripts() {
 		'menu-mobile',
 		get_stylesheet_directory_uri() . '/js/navigation.js',
 		array(),
-		'202012291350',
+		'202102061616',
 		true
 	);
 

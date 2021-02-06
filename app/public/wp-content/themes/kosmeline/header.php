@@ -98,18 +98,18 @@
 			<?php endif; ?>
 		</header>
 
-		<div id="site-menu"">
+		<div id="site-menu">
 			<nav id=" site-navigation" class="site-navigation" role="navigation">
-			<button type="button" id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
-				<span><?php esc_html_e( 'Menu', 'kosmeline' ); ?></span>
-			</button>
-			<div id="mobile-menu">
-				<?php wp_nav_menu( array(
+				<button type="button" id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
+					<span><?php esc_html_e( 'Menu', 'kosmeline' ); ?></span>
+				</button>
+				<div id="mobile-menu">
+					<?php wp_nav_menu( array(
 					'theme_location'  => 'primary',
 					'menu_id'         => 'primary-menu',
 					'container'       => ''
 				) ); ?>
-			</div>
+				</div>
 			</nav>
 		</div>
 

@@ -14,7 +14,6 @@
 		padding: $menu-item-padding-top $content-padding;
 		display: block;
 		text-decoration: none;
-		white-space: nowrap;
 
 		&:hover,
 		&:focus {
@@ -71,17 +70,21 @@
 	z-index: 2;
 	padding: 0.5rem 0.5rem 0.75rem;
 	border: none;
-	background-color: $color-2;
-	color: $base-text-color;
+	background-color: $base-text-color;
+	color: $base-background-color;
 	font-family: $font-stack-body;
 	font-size: initial;
 	line-height: 1.5;
 
 	&:hover,
 	&:focus {
-		background-color: $base-text-color;
-		color: $base-background-color;
+		background-color: $color-2;
+		color: $base-text-color;
 	}
+}
+
+body.menu-opened {
+	overflow: hidden;
 }
 
 @mixin nav-small {
@@ -95,6 +98,7 @@
 		background-color: $base-background-color;
 		z-index: 1;
 		display: none !important;
+		overflow-y: auto;
 
 		.open & {
 			display: block !important;
@@ -141,6 +145,12 @@
 }
 
 @mixin nav-large {
+	.site-navigation {
+		a {
+			white-space: nowrap;
+		}
+	}
+
 	/* Bouton menu mobile */
 	#mobile-menu-toggle {
 		display: none !important;

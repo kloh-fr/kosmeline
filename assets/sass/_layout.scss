@@ -112,6 +112,11 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 	width: 100%;
 
 	&-wrapper {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
 		background-color: $color-2;
 	}
 
@@ -141,7 +146,7 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 }
 
 .site-header {
-	padding: 2em $content-padding;
+	padding: 6rem $content-padding 2em;
 
 	/**
 	 * Titre ou logo
