@@ -235,6 +235,29 @@ ul.products {
 	}
 }
 
+/* Pagination */
+.woocommerce-pagination {
+	.page-numbers {
+		padding: 0;
+		text-align: center;
+
+		li {
+			display: inline-block;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		span,
+		a {
+			display: block;
+			padding: 0.5em;
+			min-width: em(40);
+		}
+	}
+}
+
 /* Product detail */
 .product {
 	background-color: $color-1;
