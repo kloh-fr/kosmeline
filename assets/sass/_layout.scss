@@ -100,21 +100,29 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 }
 
 /* == @section Entête ==================== */
+.site-skiplinks-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background-color: $color-2;
+
+	.admin-bar & {
+		top: 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+	}
+}
+
 .site-skiplinks {
 	position: relative;
 	margin: auto;
 	padding: 0 $content-padding;
 	max-width: em($page-width);
 	width: 100%;
-
-	&-wrapper {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
-		background-color: $color-2;
-	}
 
 	a {
 		display: inline-block;

@@ -76,6 +76,14 @@
 	font-size: initial;
 	line-height: 1.5;
 
+	.admin-bar & {
+		top: 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+	}
+
 	&:hover,
 	&:focus {
 		background-color: $color-2;
