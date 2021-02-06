@@ -32,6 +32,7 @@
 }
 
 @media (min-width: em-mq(900)) {
+	@include skiplinks-large;
 	@include header-large;
 	@include nav-large;
 	@include products-list-4col;

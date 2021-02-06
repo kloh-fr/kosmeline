@@ -66,10 +66,22 @@
 /* Bouton menu mobile */
 #mobile-menu-toggle {
 	position: fixed;
-	top: 2rem;
-	right: 1rem;
+	top: 0;
+	right: 4rem;
 	z-index: 2;
-	padding: 0.75rem 1rem;
+	padding: 0.5rem 0.5rem 0.75rem;
+	border: none;
+	background-color: $color-2;
+	color: $base-text-color;
+	font-family: $font-stack-body;
+	font-size: initial;
+	line-height: 1.5;
+
+	&:hover,
+	&:focus {
+		background-color: $base-text-color;
+		color: $base-background-color;
+	}
 }
 
 @mixin nav-small {

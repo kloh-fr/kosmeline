@@ -106,8 +106,6 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 /* == @section Entête ==================== */
 .site-skiplinks {
 	position: relative;
-	display: flex;
-	justify-content: space-between;
 	margin: auto;
 	padding: 0 $content-padding;
 	max-width: em($page-width);
@@ -132,6 +130,13 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 			top: 0;
 			left: 0;
 		}
+	}
+}
+
+@mixin skiplinks-large {
+	.site-skiplinks {
+		display: flex;
+		justify-content: space-between;
 	}
 }
 
