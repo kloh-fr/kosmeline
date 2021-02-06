@@ -197,6 +197,7 @@ body.menu-opened {
 			position: absolute;
 			top: 100%;
 			left: -100vw;
+			z-index: 1;
 			transform: translate(-50%);
 			border: 2px solid $base-text-color;
 			background-color: $base-background-color;
