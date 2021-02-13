@@ -133,24 +133,15 @@ add_action( 'widgets_init', 'kosmeline_widgets_init' );
 /* On insère le scripts pour les commentaires seulement si nécessaire */
 function kosmeline_scripts() {
 	wp_register_script(
-		'menu-mobile',
-		get_stylesheet_directory_uri() . '/js/navigation.js',
+		'custom-scripts',
+		get_stylesheet_directory_uri() . '/js/custom.min.js',
 		array(),
-		'202102061616',
-		true
-	);
-
-	wp_register_script(
-		'sky',
-		get_stylesheet_directory_uri() . '/js/sky.js',
-		array(),
-		null,
+		'202102131105',
 		true
 	);
 
 	/* On ajoute les fichiers à la queue */
-	wp_enqueue_script( 'menu-mobile' );
-	wp_enqueue_script( 'sky' );
+	wp_enqueue_script( 'custom-scripts' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -162,9 +153,9 @@ add_action( 'wp_enqueue_scripts', 'kosmeline_scripts' );
 function kosmeline_styles() {
 	wp_register_style(
 		'all',
-		get_stylesheet_directory_uri() . '/css/styles.css',
+		get_stylesheet_directory_uri() . '/css/styles.min.css',
 		false,
-		'202102061616',
+		'202102131105',
 		'all'
 	);
 

@@ -15,13 +15,13 @@
 const projectURL = 'http://localhost:10017';
 
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
-const productURL = './';
+const productURL = './app/public/wp-content/themes/kosmeline/';
 const browserAutoOpen = false;
 const injectChanges = true;
 
 // >>>>> Style options.
 // Path to main .scss file.
-const styleSRC = './assets/sass/style.scss';
+const styleSRC = './assets/sass/styles.scss';
 
 // Path to place the compiled CSS file. Default set to root folder.
 const styleDestination = './app/public/wp-content/themes/kosmeline/css/';
