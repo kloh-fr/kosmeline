@@ -3,10 +3,10 @@
  * @site         Kosméline
  * @author       Luc Poupard
  * @lastmodified 2020-12-29
- * @note         Woocommerce
+ * @note         2021-02-13
  */
 
-/* Basket in menu */
+/* Panier dans le menu */
 $cart-count: 3rem;
 
 .site-skiplinks a.site-basket {
@@ -43,77 +43,11 @@ $cart-count: 3rem;
 	}
 }
 
-/* Basket */
-.shop_table {
-	width: 100%;
-
-	th,
-	td {
-		padding: 1rem;
-	}
-
-	.product-name {
-		text-align: left;
-	}
-
-	.product-remove,
-	.product-thumbnail,
-	.product-quantity {
-		text-align: center;
-	}
-
-	.product-price,
-	.product-subtotal,
-	.actions {
-		text-align: right;
-	}
-
-	.product-thumbnail {
-		img {
-			width: 10rem;
-			vertical-align: middle;
-		}
-	}
-
-	.actions {
-		button {
-			display: inline-block;
-			border: none;
-			background-color: transparent;
-
-			&:not([disabled]) {
-				text-decoration: underline;
-				color: currentColor;
-				cursor: pointer;
-			}
-
-			&:hover,
-			&:focus {
-				text-decoration: none;
-			}
-		}
-	}
-}
-
-.woocommerce-cart-form__contents {
-	tbody {
-		tr {
-			td {
-				border-top: 2px solid $color-4;
-			}
-		}
-	}
-
-	.cart_item:not(:first-child) {
-		td {
-			border-top: 1px dotted;
-		}
-	}
-}
-
+/* Page panier */
 .cart-collaterals {
 	margin: 3rem 0 0 auto;
-	width: calc(100% - 60rem);
+	width: 50rem;
+	max-width: 100%;
 
 	th {
 		text-align: left;
@@ -145,7 +79,7 @@ ul.woocommerce-shipping-methods {
 
 .wc-proceed-to-checkout {
 	padding-top: 2rem;
-	text-align: right;
+	text-align: center;
 
 	.checkout-button {
 		display: inline-block;
@@ -166,5 +100,38 @@ ul.woocommerce-shipping-methods {
 			background-color: $base-text-color;
 			color: $color-3;
 		}
+	}
+}
+
+@mixin woocommerce-table-cart-small {
+	.woocommerce-cart-form__contents {
+		tbody {
+			tr:not(:last-child) {
+				td:last-child {
+					border-bottom: 2px solid $color-4;
+				}
+			}
+		}
+	}
+}
+@mixin woocommerce-table-cart-large {
+	.woocommerce-cart-form__contents {
+		tbody {
+			tr {
+				td {
+					border-top: 2px solid $color-4;
+				}
+			}
+		}
+
+		.cart_item:not(:first-child) {
+			td {
+				border-top: 1px dotted;
+			}
+		}
+	}
+
+	.wc-proceed-to-checkout {
+		text-align: right;
 	}
 }

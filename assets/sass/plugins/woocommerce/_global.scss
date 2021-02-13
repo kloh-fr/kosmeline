@@ -2,11 +2,11 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-29
+ * @lastmodified 2021-02-13
  * @note         Woocommerce
  */
 
-/* Breadcrumb */
+/* Fil d'Ariane */
 .woocommerce-breadcrumb {
 	margin: #{-$content-padding} #{-$content-padding} 0 #{-$content-padding};
 	padding: calc(#{$content-padding} / 2) $content-padding;
@@ -55,6 +55,136 @@
 			display: block;
 			padding: 0.5em;
 			min-width: em(40);
+		}
+	}
+}
+
+/* Notices et messages */
+.site-main {
+	.woocommerce-notices-wrapper,
+	.woocommerce-NoticeGroup {
+		ul {
+			margin: 1rem 0;
+
+			li::before {
+				display: none;
+			}
+		}
+	}
+}
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-notice {
+	padding: 2rem;
+	border: 1px dashed $base-background-color;
+	color: $color-1;
+}
+
+.woocommerce-message,
+.woocommerce-info {
+	background-color: $color-info;
+}
+
+.woocommerce-error {
+	background-color: $color-error;
+}
+
+.woocommerce-notice--success {
+	background-color: $color-success;
+}
+
+/* Tableeaux */
+.shop_table {
+	width: 100%;
+
+	th,
+	td {
+		padding: 0.75rem 0;
+	}
+
+	.actions {
+		button {
+			display: inline-block;
+			border: none;
+			background-color: transparent;
+			color: currentColor;
+			text-decoration: underline;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+
+			&[disabled] {
+				color: $color-4;
+				text-decoration: none;
+				cursor: not-allowed;
+			}
+		}
+	}
+}
+
+@mixin woocommerce-table-small {
+	.shop_table {
+		thead,
+		tbody th,
+		tfoot th {
+			display: none;
+		}
+
+		tr {
+			td {
+				display: block;
+				clear: both;
+
+				&[data-title]::before {
+					content: attr(data-title);
+					display: block;
+					font-weight: bold;
+				}
+			}
+		}
+
+		.product-thumbnail,
+		.actions {
+			text-align: center;
+		}
+	}
+}
+
+@mixin woocommerce-table-large {
+	.shop_table {
+		border-collapse: collapse;
+
+		th,
+		td {
+			padding: 1rem;
+		}
+
+		.product-name {
+			text-align: left;
+		}
+
+		.product-remove,
+		.product-thumbnail,
+		.product-quantity {
+			text-align: center;
+		}
+
+		.product-price,
+		.product-subtotal,
+		.actions {
+			text-align: right;
+		}
+
+		.product-thumbnail {
+			img {
+				width: 10rem;
+				vertical-align: middle;
+			}
 		}
 	}
 }

@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-29
+ * @lastmodified 2021-02-13
  * @note         Woocommerce
  */
 
@@ -17,62 +17,35 @@
 	}
 }
 
-@mixin login-large {
-	.col2-set {
-		.col-1,
-		.col-2 {
-			float: left;
-			width: calc((100% / 2) - 3rem);
-		}
+@mixin account-columns-large {
+	.col2-set .col-1,
+	.col2-set .col-2,
+	.woocommerce-EditAccountForm fieldset {
+		float: left;
+		width: calc((100% / 2) - 3rem);
+	}
 
-		.col-1 {
-			margin-right: 6rem;
-		}
+	.col2-set .col-1,
+	.woocommerce-EditAccountForm fieldset:first-child {
+		margin-right: 6rem;
+	}
+
+	.woocommerce-EditAccountForm fieldset:not(:first-child) {
+		margin-top: 0;
 	}
 }
 
-/* Login and account creation */
-.woocommerce-form-login {
-	border: 2px solid $color-4;
+/* Compte */
+.woocommerce-MyAccount-navigation,
+.woocommerce-MyAccount-content {
+	margin-top: 3rem;
 }
 
-.woocommerce-form-login,
-.woocommerce-form-register {
-	margin-top: 2rem;
-	padding: 3rem 4rem;
-	background-color: $color-2;
-
-	button {
-		display: block;
-		margin: 3rem auto 0;
-	}
-}
-
-.woocommerce-LostPassword {
-	padding-top: 2rem;
-	text-align: center;
-}
-
-@mixin login-small {
-	.woocommerce-form-login,
-	.woocommerce-form-register {
-		margin-right: -4rem;
-		margin-left: -4rem;
-	}
-}
-
-/* Rest password */
-.woocommerce-ResetPassword {
-	input[type="text"] {
-		width: auto;
-	}
-}
-
-/* Account pages */
-.woocommerce-account {
-	.woocommerce-MyAccount-navigation,
-	.woocommerce-MyAccount-content {
-		margin-top: 3rem;
+.woocommerce-MyAccount-content {
+	mark {
+		background: transparent;
+		color: currentColor;
+		font-weight: bold;
 	}
 }
 
@@ -115,20 +88,104 @@
 	}
 }
 
-.woocommerce-Button {
-	margin: 1.5rem auto 2rem;
+/* Connexion et création de compte */
+.woocommerce-form-login {
+	border: 2px solid $color-4;
 }
 
-@mixin account-detail-large {
-	.woocommerce-EditAccountForm {
-		fieldset {
-			float: left;
-			margin-top: 0;
-			width: 45%;
+.woocommerce-form-login,
+.woocommerce-form-register {
+	margin-top: 2rem;
+	padding: 3rem 4rem;
+	background-color: $color-2;
 
-			&:first-child {
-				margin-right: 9%;
+	button {
+		display: block;
+		margin: 3rem auto 0;
+	}
+}
+
+@mixin account-columns-small {
+	.woocommerce-form-login,
+	.woocommerce-form-register {
+		margin-right: -4rem;
+		margin-left: -4rem;
+	}
+}
+
+/* Mot de passe perdu */
+.woocommerce-LostPassword {
+	padding-top: 2rem;
+	text-align: center;
+}
+
+.woocommerce-ResetPassword {
+	input[type="text"] {
+		width: auto;
+	}
+}
+
+/* Liste des commandes */
+.woocommerce-orders-table {
+	tbody tr {
+		td {
+			border-top: 2px solid $color-4;
+		}
+
+		&:last-child {
+			td {
+				border-bottom: 2px solid $color-4;
 			}
 		}
 	}
+
+	.woocommerce-orders-table__header-order-actions,
+	.woocommerce-orders-table__cell-order-actions {
+		text-align: center;
+	}
+}
+
+@mixin woocommerce-table-orders-small {
+	.woocommerce-orders-table {
+		tbody tr td {
+			&:not(:first-child) {
+				border-top: 1px dotted;
+			}
+
+			&:not(:last-child) {
+				border-bottom: none;
+			}
+
+			&.woocommerce-orders-table__cell-order-actions {
+				padding-bottom: 1.5rem;
+
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@mixin woocommerce-table-orders-large {
+	.woocommerce-orders-table {
+		thead th {
+			text-align: left;
+		}
+
+		tbody tr:not(:first-child) td {
+			border-top: 1px dotted;
+		}
+	}
+}
+
+/* Édition d'adresse */
+.woocommerce-address-fields {
+	margin-top: 3rem;
+}
+
+.woocommerce-address-fields__field-wrapper {
+	margin-bottom: 4rem;
+	width: em(450);
+	max-width: 100%;
 }

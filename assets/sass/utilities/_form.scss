@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-21
+ * @lastmodified 2021-02-13
  * @note         Styles de base pour les formulaires
  */
 
@@ -44,6 +44,21 @@
 	}
 }
 
+/* Fieldset */
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+
+	&:not(:first-child) {
+		margin-top: 3rem;
+	}
+}
+
+legend {
+	font-weight: bold;
+}
+
 /**
  * Désactiver les arrondis sur iOS
  */
@@ -54,13 +69,41 @@ button {
 	-webkit-appearance: none;
 }
 
+/* Champs */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+	display: block;
+	padding: 0.25em 0.5em;
+	width: 100%;
+	border: 2px solid $base-text-color;
+	background-color: $base-text-color;
+	color: $base-background-color;
+	line-height: 1.5;
+
+	&:focus {
+		border-color: $color-4;
+	}
+}
+
+/* On limite le resize des textarea dans le sens veritcal pour éviter de tout péter */
+textarea {
+	width: 100%;
+	resize: vertical;
+}
+
+/* Boutons */
 button,
 .button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
 	display: inline-block;
-	padding: 0.25em 0.5em 0.35em;
+	padding: 0.75em 1em;
 	border: 2px solid $base-text-color;
 	background-color: $color-3;
 	color: $base-text-color;
@@ -98,21 +141,49 @@ a.button {
 :-ms-input-placeholder {
 }
 
-/* On limite le resize des textarea dans le sens veritcal pour éviter de tout péter */
-textarea {
-	resize: vertical;
-}
+/**
+ * SelectWoo pour WooCommerce
+ */
+.select2-container--default .select2-selection--single {
+	padding: 0.25em 0.5em;
+	border: 2px solid $base-text-color;
+	border-radius: 0;
+	background-color: $base-text-color;
+	height: auto;
 
-/* Fieldset */
-fieldset {
-	padding: 0;
-	border: none;
-
-	&:not(:first-child) {
-		margin-top: 3rem;
+	&:focus {
+		border-color: $color-4;
 	}
 }
 
-legend {
-	font-weight: bold;
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: inherit;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+	padding-left: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 100%;
+}
+
+.select2-dropdown,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	color: $base-background-color;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted[data-selected] {
+	background-color: $color-3;
+	color: $base-text-color;
+}
+
+.select2-dropdown {
+	border: 2px solid $color-4;
+	border-radius: 0;
+}
+
+.select2-container--open .select2-dropdown--below {
+	border-top: 2px solid $color-4;
 }

@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-27
+ * @lastmodified 2021-02-13
  * @note         Variables
  */
 
@@ -26,6 +26,10 @@ $color-2: #060606;
 $color-3: #090909;
 $color-4: #999;
 
+$color-error: #e06748;
+$color-success: #4feea4;
+$color-info: #62bdf1;
+
 /* Tableaux */
 $table-border-color: #333;
 
@@ -35,8 +39,8 @@ $table-border-color: #333;
  * @see https://bitsofco.de/the-new-system-font-stack/
  * @note Les variables par défaut sont utilisées dans _base.scss
  */
-$font-stack-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-	Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-stack-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+	"Helvetica Neue", sans-serif;
 $font-stack-headings: "inglobal";
 
 /* Titres : valeurs en pixels */

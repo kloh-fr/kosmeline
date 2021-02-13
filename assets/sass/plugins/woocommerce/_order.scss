@@ -2,30 +2,36 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-29
+ * @lastmodified 2021-02-13
  * @note         Woocommerce
  */
 
 /* Validation commande */
 #customer_details {
-	display: flex;
-	justify-content: space-between;
-
-	> div {
-		padding: 3rem 0;
-		width: calc(50% - 3rem);
-	}
-
 	label {
 		display: block;
 		margin: 1rem 0 0.5rem;
 	}
 }
 
-// Review
-.woocommerce-checkout-review-order-table {
-	border-collapse: collapse;
+#ship-to-different-address {
+	font-size: 1em;
+	font-family: inherit;
+}
 
+.woocommerce-additional-fields {
+	margin-top: 2rem;
+	border-top: 1px dotted $color-4;
+}
+
+/* Revue */
+#order_review_heading {
+	clear: both;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+}
+
+.woocommerce-checkout-review-order-table {
 	tbody tr,
 	tfoot tr {
 		th,
@@ -33,53 +39,80 @@
 			border-top: 2px solid $color-4;
 		}
 	}
+}
 
-	.cart_item:not(:first-child),
-	.shipping {
-		th,
-		td {
+@mixin woocommerce-table-review-small {
+	.woocommerce-checkout-review-order-table {
+		.cart_item td.product-total {
+			padding-top: 0;
+			border-top: none;
+		}
+
+		.product-name {
+			padding-bottom: 0;
+		}
+
+		tr:not(:first-child) .product-name,
+		.shipping td {
 			border-top: 1px dotted;
 		}
-	}
 
-	.product-subtotal {
-		text-align: left;
-	}
+		.cart-subtotal,
+		.order-total {
+			td::before {
+				display: block;
+				font-weight: bold;
+			}
+		}
 
-	.cart-subtotal,
-	.shipping,
-	.order-total {
-		th {
-			text-align: right;
-			vertical-align: top;
+		.cart-subtotal td::before {
+			margin-top: 1rem;
+			content: "Sous-total";
+		}
+
+		.order-total td::before {
+			content: "Total";
+		}
+	}
+}
+
+@mixin woocommerce-table-review-large {
+	.woocommerce-checkout-review-order-table {
+		.cart_item:not(:first-child),
+		.shipping {
+			th,
+			td {
+				border-top: 1px dotted;
+			}
+		}
+
+		.product-subtotal {
+			text-align: left;
+		}
+
+		.cart-subtotal,
+		.shipping,
+		.order-total {
+			th {
+				text-align: right;
+				vertical-align: top;
+			}
 		}
 	}
 }
 
 .place-order {
-	margin-top: 3rem;
+	margin-top: 2rem;
 	text-align: center;
 
 	button {
-		display: inline-block;
-		padding: 0.75em 1em;
-		border: 2px solid $base-text-color;
-		background-color: $color-3;
-		color: $base-text-color;
-		line-height: 1.5;
 		text-decoration: none;
 		cursor: pointer;
+	}
 
-		&:hover,
-		&:focus {
-			border-color: $color-4;
-			color: $color-4;
-		}
-
-		&:active {
-			background-color: $base-text-color;
-			color: $color-3;
-		}
+	.validate-required {
+		margin: 2rem 0;
+		text-align: left;
 	}
 }
 
@@ -88,88 +121,25 @@
 
 	.methods {
 		padding: 0;
+
+		li {
+			&::before {
+				display: none;
+			}
+		}
 	}
 
 	.payment_box {
-		margin: 1rem 2rem 2rem;
+		margin: 0.5rem 0 2rem;
 		padding: 1rem 2rem;
-		border: 1px dashed $color-2;
-		background-color: $base-text-color;
+		border: 1px dashed $color-info;
+		background-color: $color-info;
 		color: $color-3;
 	}
 
 	.woocommerce-privacy-policy-text {
 		text-align: left;
 	}
-}
-
-// Repris de la quantité sur le détail
-input[type="text"],
-input[type="number"],
-input[type="tel"],
-input[type="email"],
-input[type="password"],
-textarea,
-select {
-	display: block;
-	padding: 0.25em 0.5em;
-	width: 100%;
-	border: 2px solid $base-text-color;
-	background-color: $base-text-color;
-	color: $base-background-color;
-	line-height: 1.5;
-
-	&:focus {
-		border-color: $color-4;
-	}
-}
-
-textarea {
-	width: 100%;
-}
-
-.select2-container--default .select2-selection--single {
-	padding: 0.25em 0.5em;
-	border: 2px solid $base-text-color;
-	border-radius: 0;
-	background-color: $base-text-color;
-	height: auto;
-
-	&:focus {
-		border-color: $color-4;
-	}
-}
-
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-	line-height: inherit;
-}
-
-.select2-container .select2-selection--single .select2-selection__rendered {
-	padding-left: 0;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-	height: 100%;
-}
-
-.select2-dropdown,
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-	color: $base-background-color;
-}
-
-.select2-container--default .select2-results__option--highlighted[aria-selected],
-.select2-container--default .select2-results__option--highlighted[data-selected] {
-	background-color: $color-3;
-	color: $base-text-color;
-}
-
-.select2-dropdown {
-	border: 2px solid $color-4;
-	border-radius: 0;
-}
-
-.select2-container--open .select2-dropdown--below {
-	border-top: 2px solid $color-4;
 }
 
 /* AJAX loading */
@@ -196,9 +166,12 @@ textarea {
 }
 
 /* Confirmation */
-.woocommerce-table--order-details {
-	border-collapse: collapse;
+.woocommerce-order-details,
+.woocommerce-customer-details {
+	margin-top: 4rem;
+}
 
+.woocommerce-table--order-details {
 	tbody tr,
 	tfoot tr {
 		th,
@@ -206,38 +179,74 @@ textarea {
 			border-top: 2px solid $color-4;
 		}
 	}
+}
 
-	.order_item:not(:first-child),
-	tfoot tr:not(:first-child):not(:last-child) {
-		th,
-		td {
+@mixin woocommerce-table-order-detail-small {
+	.woocommerce-table--order-details {
+		tbody tr:not(:first-child) td,
+		tfoot tr:not(:first-child):not(:last-child) td {
 			border-top: 1px dotted;
 		}
-	}
 
-	.product-total {
-		text-align: left;
-	}
+		tbody tr td.product-total {
+			padding-top: 0;
+			border-top: none;
+		}
 
-	tfoot {
-		th {
-			text-align: right;
-			vertical-align: top;
+		.product-name {
+			padding-bottom: 0;
+		}
+
+		tfoot {
+			td::before {
+				display: block;
+				font-weight: bold;
+			}
+		}
+
+		tfoot tr:first-child td::before {
+			margin-top: 1rem;
+			content: "Sous-total";
+		}
+
+		tfoot tr:nth-child(2) td::before {
+			content: "Expédition";
+		}
+
+		tfoot tr:nth-child(3) td {
+			margin-bottom: 1.5rem;
+
+			&::before {
+				content: "Moyen de paiement";
+			}
+		}
+
+		tfoot tr:last-child td::before {
+			margin-top: 1rem;
+			content: "Total";
 		}
 	}
 }
 
-.woocommerce-order-details,
-.woocommerce-customer-details {
-	margin-top: 4rem;
-}
+@mixin woocommerce-table-order-detail-large {
+	.woocommerce-table--order-details {
+		.order_item:not(:first-child),
+		tfoot tr:not(:first-child):not(:last-child) {
+			th,
+			td {
+				border-top: 1px dotted;
+			}
+		}
 
-.woocommerce-columns--addresses {
-	display: flex;
-	justify-content: space-between;
+		.product-total {
+			text-align: left;
+		}
 
-	> div {
-		padding: 3rem 0;
-		width: calc(50% - 3rem);
+		tfoot {
+			th {
+				text-align: right;
+				vertical-align: top;
+			}
+		}
 	}
 }
