@@ -76,11 +76,7 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 	bottom: 0;
 	left: 0;
 	z-index: -1;
-	background-image: radial-gradient(
-		circle at top center,
-		rgba(255, 255, 255, 0.075),
-		rgba(0, 0, 0, 1) 50%
-	);
+	background-image: radial-gradient(circle at top center, rgba(255, 255, 255, 0.075), rgba(0, 0, 0, 1) 50%);
 }
 
 #sky {
@@ -101,12 +97,11 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 
 /* == @section Entête ==================== */
 .site-skiplinks-wrapper {
-	position: fixed;
+	position: sticky;
 	top: 0;
-	left: 0;
-	right: 0;
 	z-index: 1;
 	background-color: $color-2;
+	border-bottom: 1px solid currentColor;
 
 	.admin-bar & {
 		top: 46px;
@@ -152,7 +147,7 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 }
 
 .site-header {
-	padding: 6rem $content-padding 2em;
+	padding: $content-padding 2em;
 
 	/**
 	 * Titre ou logo
