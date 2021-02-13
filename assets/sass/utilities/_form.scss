@@ -54,6 +54,34 @@ button {
 	-webkit-appearance: none;
 }
 
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	display: inline-block;
+	padding: 0.25em 0.5em 0.35em;
+	border: 2px solid $base-text-color;
+	background-color: $color-3;
+	color: $base-text-color;
+	line-height: 1.5;
+
+	&:hover,
+	&:focus {
+		border-color: $color-4;
+		color: $color-4;
+	}
+
+	&:active {
+		background-color: $base-text-color;
+		color: $color-3;
+	}
+}
+
+a.button {
+	text-decoration: none;
+}
+
 /**
  * Styler les placeholder
  * #see http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css

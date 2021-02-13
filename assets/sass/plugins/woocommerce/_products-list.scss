@@ -86,23 +86,7 @@
 	}
 
 	.product_type_simple.button {
-		display: inline-block;
 		margin: 1.5rem auto 2rem;
-		padding: 0.25em 0.5em 0.35em;
-		border: 2px solid $base-text-color;
-		background-color: $color-3;
-		color: $base-text-color;
-
-		&:hover,
-		&:focus {
-			border-color: $color-4;
-			color: $color-4;
-		}
-
-		&:active {
-			background-color: $base-text-color;
-			color: $color-3;
-		}
 	}
 }
 
