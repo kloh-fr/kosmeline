@@ -109,11 +109,13 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 	background-color: $color-2;
 
 	.admin-bar & {
-		top: 32px;
+		top: 46px;
+	}
+}
 
-		@media screen and (max-width: 782px) {
-			top: 46px;
-		}
+@mixin admin-skiplinks {
+	.admin-bar .site-skiplinks-wrapper {
+		top: 32px;
 	}
 }
 
