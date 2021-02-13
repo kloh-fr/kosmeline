@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2020-12-28
+ * @lastmodified 2021-02-13
  * @note         Navigation
  */
 
@@ -67,7 +67,7 @@
 	position: fixed;
 	top: 0;
 	right: 4rem;
-	z-index: 2;
+	z-index: 3;
 	padding: 0.5rem 0.5rem 0.75rem;
 	border: none;
 	background-color: $base-text-color;
@@ -106,7 +106,7 @@ body.menu-opened {
 		left: 0;
 		padding-top: 7rem;
 		background-color: $base-background-color;
-		z-index: 1;
+		z-index: 2;
 		display: none !important;
 		overflow-y: auto;
 
