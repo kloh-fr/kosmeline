@@ -99,7 +99,7 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 .site-skiplinks-wrapper {
 	position: sticky;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
 	background-color: $color-2;
 	border-bottom: 1px solid currentColor;
 
@@ -197,6 +197,7 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
  * Contient le contenu et la colonne latérale
  */
 .site-content-wrapper {
+	padding: $content-padding;
 	border-bottom: 2px solid $base-text-color;
 	background-color: $color-1;
 }
@@ -230,10 +231,6 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 			}
 		}
 	}
-}
-
-article.page {
-	padding: $content-padding;
 }
 
 /* -- @subsection Colonne latérale ----------------------------- */

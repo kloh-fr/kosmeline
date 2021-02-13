@@ -15,7 +15,7 @@
 }
 
 .product-kosmeline {
-	padding: $content-padding;
+	padding: $content-padding 0;
 
 	.product_title {
 		line-height: 1.25;
@@ -85,6 +85,7 @@
 }
 
 .woocommerce-Tabs-panel {
+	margin: 0 #{-$content-padding} #{-$content-padding} #{-$content-padding};
 	padding: calc(#{$content-padding} / 2) $content-padding;
 	background-color: $color-3;
 }

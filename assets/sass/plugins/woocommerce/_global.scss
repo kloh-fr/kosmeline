@@ -8,7 +8,8 @@
 
 /* Breadcrumb */
 .woocommerce-breadcrumb {
-	padding: calc(#{$content-padding} / 2) $content-padding 1.25rem;
+	margin: #{-$content-padding} #{-$content-padding} 0 #{-$content-padding};
+	padding: calc(#{$content-padding} / 2) $content-padding;
 	background-color: $color-2;
 	color: $color-4;
 
