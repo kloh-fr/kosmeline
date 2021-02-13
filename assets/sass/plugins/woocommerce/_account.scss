@@ -6,6 +6,69 @@
  * @note         Woocommerce
  */
 
+.col2-set {
+	.col-1,
+	.col-2 {
+		margin-top: 2rem;
+	}
+
+	.col-1 {
+		margin-bottom: 4rem;
+	}
+}
+
+@mixin login-large {
+	.col2-set {
+		.col-1,
+		.col-2 {
+			float: left;
+			width: calc((100% / 2) - 3rem);
+		}
+
+		.col-1 {
+			margin-right: 6rem;
+		}
+	}
+}
+
+/* Login and account creation */
+.woocommerce-form-login {
+	border: 2px solid $color-4;
+}
+
+.woocommerce-form-login,
+.woocommerce-form-register {
+	margin-top: 2rem;
+	padding: 3rem 4rem;
+	background-color: $color-2;
+
+	button {
+		display: block;
+		margin: 3rem auto 0;
+	}
+}
+
+.woocommerce-LostPassword {
+	padding-top: 2rem;
+	text-align: center;
+}
+
+@mixin login-small {
+	.woocommerce-form-login,
+	.woocommerce-form-register {
+		margin-right: -4rem;
+		margin-left: -4rem;
+	}
+}
+
+/* Rest password */
+.woocommerce-ResetPassword {
+	input[type="text"] {
+		width: auto;
+	}
+}
+
+/* Account pages */
 .woocommerce-account {
 	.woocommerce-MyAccount-navigation,
 	.woocommerce-MyAccount-content {
