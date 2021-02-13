@@ -1,30 +1,100 @@
-# ignore everything in "conf" and "logs"
+# LocalWP #
+###########
+# Ignore everything in conf and logs
 conf/*
 logs/*
 
-# ignore everything in "public", except:
-# "wp-content" directory
+# Ignore everything in public, except wp-content directory
 app/public/*
 !app/public/wp-content/
 
-# ignore everything in "wp-content", except "themes" directory
+# Ignore everything in wp-content except themes directory
 app/public/wp-content/*
 !app/public/wp-content/themes/
 
-# ignore everything in "themes", except "kosmeline" theme
+# Ignore everything in themes, except kosmeline theme
 app/public/wp-content/themes/*
 !app/public/wp-content/themes/kosmeline/
 
-# ignore node dependency directories
-node_modules/
+# Ignore everything in img, except favicons directory
+app/public/wp-content/themes/kosmeline/img*
+!app/public/wp-content/themes/kosmeline/img/favicons/
 
-# ignore log files and databases
+# NPM #
+#######
+# Ignore all directories called node_modules in current folder and any subfolders.
+node_modules/
+/node_modules/
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.map
+
+# Logs and databases #
+######################
 *.log
 *.sql
 *.sqlite
+*.env
 
-# ignore Local config file
+# OS generated files #
+######################
+**.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files #
+#######################
+*.un~
+
+# SASS #
+########
+**/.sass-cache
+**/.sass-cache/*
+**/.map
+
+# Composer #
+############
+!assets/js/vendor/
+wpcs/
+/vendor/
+
+# Bower #
+#########
+assets/bower_components/*
+
+# Codekit #
+###########
+/codekit-config.json
+*.codekit
+**.codekit-cache/*
+
+# Compiled Files and Build Dirs #
+#################################
+/README.html
+
+# PhpStrom Project Files #
+##########################
+.idea/
+library/vendors/composer
+assets/img/.DS_Store
+
+# Local WP #
+############
+# Ignore Local config file
 local-site.json
 
-# ignore compiled CSS files
+# Ignore compiled CSS files
 app/public/wp-content/themes/kosmeline/css/*
