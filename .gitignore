@@ -96,5 +96,6 @@ assets/img/.DS_Store
 # Ignore Local config file
 local-site.json
 
-# Ignore compiled CSS files
+# Ignore compiled files
 app/public/wp-content/themes/kosmeline/css/*
+app/public/wp-content/themes/kosmeline/js/*
