@@ -86,6 +86,9 @@ const zipIncludeGlob = ['./app/public/wp-content/themes/**/*']; // Default: Incl
 
 // Default ignored files and folders for the zip file.
 const zipIgnoreGlob = [
+	'!./app/public/wp-content/themes/kosmeline/css/styles.css',
+	'!./app/public/wp-content/themes/kosmeline/css/styles.css.map',
+	'!./app/public/wp-content/themes/kosmeline/js/custom.js',
 	'!./app/public/wp-content/themes/twentytwentyone/**/*',
 	'!./app/public/wp-content/themes/twentytwentyone',
 	'!./app/public/wp-content/themes/index.php',
