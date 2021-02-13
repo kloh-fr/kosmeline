@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-29
+ * @note         Woocommerce
+ */
+
+/* Breadcrumb */
+.woocommerce-breadcrumb {
+	padding: calc(#{$content-padding} / 2) $content-padding 1.25rem;
+	background-color: $color-2;
+	color: $color-4;
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		color: currentColor;
+
+		&[aria-current] {
+			text-decoration: none;
+		}
+	}
+
+	&-delimiter {
+		margin: 0 0.5rem;
+	}
+}
+
+/* Pagination */
+.woocommerce-pagination {
+	.page-numbers {
+		padding: 0;
+		text-align: center;
+
+		li {
+			display: inline-block;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		span,
+		a {
+			display: block;
+			padding: 0.5em;
+			min-width: em(40);
+		}
+	}
+}

@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-29
+ * @note         Woocommerce
+ */
+
+.woocommerce-account {
+	.woocommerce-MyAccount-navigation,
+	.woocommerce-MyAccount-content {
+		margin-top: 3rem;
+	}
+}
+
+@mixin account-small {
+	.woocommerce-MyAccount-navigation {
+		ul {
+			padding-left: 0;
+
+			li {
+				display: inline-block;
+				padding-left: 1.25em;
+
+				&::before {
+					left: 0;
+				}
+
+				&:first-child {
+					padding-left: 0;
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin account-large {
+	.woocommerce-account {
+		.woocommerce-MyAccount-navigation {
+			float: left;
+			width: em(215);
+		}
+
+		.woocommerce-MyAccount-content {
+			float: right;
+			width: calc(100% - #{em(220)});
+		}
+	}
+}
+
+.woocommerce-Button {
+	display: inline-block;
+	margin: 1.5rem auto 2rem;
+	padding: 0.25em 0.5em 0.35em;
+	border: 2px solid $base-text-color;
+	background-color: $color-3;
+	color: $base-text-color;
+	line-height: 1.5;
+
+	&:hover,
+	&:focus {
+		border-color: $color-4;
+		color: $color-4;
+	}
+
+	&:active {
+		background-color: $base-text-color;
+		color: $color-3;
+	}
+}
+
+@mixin account-detail-large {
+	.woocommerce-EditAccountForm {
+		fieldset {
+			float: left;
+			margin-top: 0;
+			width: 45%;
+
+			&:first-child {
+				margin-right: 9%;
+			}
+		}
+	}
+}

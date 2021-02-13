@@ -1,0 +1,243 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-29
+ * @note         Woocommerce
+ */
+
+/* Validation commande */
+#customer_details {
+	display: flex;
+	justify-content: space-between;
+
+	> div {
+		padding: 3rem 0;
+		width: calc(50% - 3rem);
+	}
+
+	label {
+		display: block;
+		margin: 1rem 0 0.5rem;
+	}
+}
+
+// Review
+.woocommerce-checkout-review-order-table {
+	border-collapse: collapse;
+
+	tbody tr,
+	tfoot tr {
+		th,
+		td {
+			border-top: 2px solid $color-4;
+		}
+	}
+
+	.cart_item:not(:first-child),
+	.shipping {
+		th,
+		td {
+			border-top: 1px dotted;
+		}
+	}
+
+	.product-subtotal {
+		text-align: left;
+	}
+
+	.cart-subtotal,
+	.shipping,
+	.order-total {
+		th {
+			text-align: right;
+			vertical-align: top;
+		}
+	}
+}
+
+.place-order {
+	margin-top: 3rem;
+	text-align: center;
+
+	button {
+		display: inline-block;
+		padding: 0.75em 1em;
+		border: 2px solid $base-text-color;
+		background-color: $color-3;
+		color: $base-text-color;
+		line-height: 1.5;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			border-color: $color-4;
+			color: $color-4;
+		}
+
+		&:active {
+			background-color: $base-text-color;
+			color: $color-3;
+		}
+	}
+}
+
+.woocommerce-checkout-payment {
+	margin-top: 3rem;
+
+	.methods {
+		padding: 0;
+	}
+
+	.payment_box {
+		margin: 1rem 2rem 2rem;
+		padding: 1rem 2rem;
+		border: 1px dashed $color-2;
+		background-color: $base-text-color;
+		color: $color-3;
+	}
+
+	.woocommerce-privacy-policy-text {
+		text-align: left;
+	}
+}
+
+// Repris de la quantité sur le détail
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+	display: block;
+	padding: 0.25em 0.5em;
+	width: 100%;
+	border: 2px solid $base-text-color;
+	background-color: $base-text-color;
+	color: $base-background-color;
+	line-height: 1.5;
+
+	&:focus {
+		border-color: $color-4;
+	}
+}
+
+textarea {
+	width: 100%;
+}
+
+.select2-container--default .select2-selection--single {
+	padding: 0.25em 0.5em;
+	border: 2px solid $base-text-color;
+	border-radius: 0;
+	background-color: $base-text-color;
+	height: auto;
+
+	&:focus {
+		border-color: $color-4;
+	}
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: inherit;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+	padding-left: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 100%;
+}
+
+.select2-dropdown,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	color: $base-background-color;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted[data-selected] {
+	background-color: $color-3;
+	color: $base-text-color;
+}
+
+.select2-dropdown {
+	border: 2px solid $color-4;
+	border-radius: 0;
+}
+
+.select2-container--open .select2-dropdown--below {
+	border-top: 2px solid $color-4;
+}
+
+/* AJAX loading */
+.blockUI.blockOverlay {
+	background-color: rgba($color-1, 0.85) !important;
+}
+
+.woocommerce-message {
+	margin: 2rem;
+	padding: 1rem 2rem;
+	border: 1px dashed $color-2;
+	background-color: $base-text-color;
+	color: $color-3;
+
+	a {
+		color: currentColor;
+	}
+}
+
+.added_to_cart.wc-forward {
+	display: block;
+	margin: 0 auto 2rem;
+	text-decoration: underline;
+}
+
+/* Confirmation */
+.woocommerce-table--order-details {
+	border-collapse: collapse;
+
+	tbody tr,
+	tfoot tr {
+		th,
+		td {
+			border-top: 2px solid $color-4;
+		}
+	}
+
+	.order_item:not(:first-child),
+	tfoot tr:not(:first-child):not(:last-child) {
+		th,
+		td {
+			border-top: 1px dotted;
+		}
+	}
+
+	.product-total {
+		text-align: left;
+	}
+
+	tfoot {
+		th {
+			text-align: right;
+			vertical-align: top;
+		}
+	}
+}
+
+.woocommerce-order-details,
+.woocommerce-customer-details {
+	margin-top: 4rem;
+}
+
+.woocommerce-columns--addresses {
+	display: flex;
+	justify-content: space-between;
+
+	> div {
+		padding: 3rem 0;
+		width: calc(50% - 3rem);
+	}
+}

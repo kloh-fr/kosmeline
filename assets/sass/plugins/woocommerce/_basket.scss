@@ -1,0 +1,170 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-29
+ * @note         Woocommerce
+ */
+
+/* Basket in menu */
+$cart-count: 3rem;
+
+.site-skiplinks a.site-basket {
+	position: relative;
+	padding-right: #{$cart-count + 1rem};
+}
+
+.cart-contents-count {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0.5rem;
+	display: inline-block;
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+	background-color: $base-text-color;
+	color: $base-background-color;
+	text-align: center;
+	line-height: 1.75;
+
+	> span {
+		@extend .visually-hidden;
+	}
+}
+
+.site-basket {
+	&:hover,
+	&:focus {
+		.cart-contents-count {
+			background-color: $base-background-color;
+			color: $base-text-color;
+		}
+	}
+}
+
+/* Basket */
+.shop_table {
+	width: 100%;
+
+	th,
+	td {
+		padding: 1rem;
+	}
+
+	.product-name {
+		text-align: left;
+	}
+
+	.product-remove,
+	.product-thumbnail,
+	.product-quantity {
+		text-align: center;
+	}
+
+	.product-price,
+	.product-subtotal,
+	.actions {
+		text-align: right;
+	}
+
+	.product-thumbnail {
+		img {
+			width: 10rem;
+			vertical-align: middle;
+		}
+	}
+
+	.actions {
+		button {
+			display: inline-block;
+			border: none;
+			background-color: transparent;
+
+			&:not([disabled]) {
+				text-decoration: underline;
+				color: currentColor;
+				cursor: pointer;
+			}
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.woocommerce-cart-form__contents {
+	tbody {
+		tr {
+			td {
+				border-top: 2px solid $color-4;
+			}
+		}
+	}
+
+	.cart_item:not(:first-child) {
+		td {
+			border-top: 1px dotted;
+		}
+	}
+}
+
+.cart-collaterals {
+	margin: 3rem 0 0 auto;
+	width: calc(100% - 60rem);
+
+	th {
+		text-align: left;
+		vertical-align: top;
+	}
+
+	.shop_table {
+		tr:not(:first-child) {
+			th,
+			td {
+				border-top: 2px solid $color-4;
+			}
+		}
+	}
+}
+
+ul.woocommerce-shipping-methods {
+	padding: 0;
+	list-style: none;
+
+	li::before {
+		display: none;
+	}
+
+	input[type="radio"] {
+		margin-right: 0.5rem;
+	}
+}
+
+.wc-proceed-to-checkout {
+	padding-top: 2rem;
+	text-align: right;
+
+	.checkout-button {
+		display: inline-block;
+		padding: 0.75em 1em;
+		border: 2px solid $base-text-color;
+		background-color: $color-3;
+		color: $base-text-color;
+		line-height: 1.5;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			border-color: $color-4;
+			color: $color-4;
+		}
+
+		&:active {
+			background-color: $base-text-color;
+			color: $color-3;
+		}
+	}
+}

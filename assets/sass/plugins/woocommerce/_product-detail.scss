@@ -1,0 +1,192 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-29
+ * @note         Woocommerce
+ */
+
+.product {
+	background-color: $color-1;
+}
+
+.woocommerce-product-gallery__wrapper {
+	margin: 0;
+}
+
+.product-kosmeline {
+	padding: $content-padding;
+
+	.product_title {
+		line-height: 1.25;
+	}
+
+	.woocommerce-product-gallery {
+		img {
+			border: 2px solid $color-4;
+		}
+	}
+}
+
+.kosmeline-product-title {
+	display: block;
+
+	&::before {
+		content: "\0000AB\0000A0";
+	}
+	&::after {
+		content: "\0000A0\0000BB";
+	}
+}
+
+.product-infos {
+	color: $color-4;
+
+	dt,
+	dd {
+		display: inline-block;
+	}
+
+	dd {
+		margin-left: 0;
+	}
+
+	.stock {
+		text-transform: lowercase;
+	}
+}
+
+@mixin product-detail-small {
+	.product-kosmeline {
+		.entry-summary {
+			padding-top: $content-padding;
+		}
+	}
+}
+
+@mixin product-detail-large {
+	.product-kosmeline {
+		display: flex;
+
+		.woocommerce-product-gallery {
+			width: 35rem;
+			max-width: 35%;
+		}
+
+		.entry-summary {
+			flex: 1;
+			padding-left: $content-padding;
+		}
+	}
+}
+
+.woocommerce-tab {
+	margin-top: 2rem;
+}
+
+.woocommerce-Tabs-panel {
+	padding: calc(#{$content-padding} / 2) $content-padding;
+	background-color: $color-3;
+}
+
+.wc-tabs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	white-space: nowrap;
+	overflow: auto;
+
+	li {
+		display: inline-block;
+
+		&.active {
+			background-color: $color-3;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	a {
+		display: inline-block;
+		padding: 1.75rem $content-padding;
+	}
+}
+
+ul.wc-tabs li::before {
+	display: none;
+}
+
+.entry-summary {
+	.price,
+	.cart {
+		text-align: right;
+	}
+
+	.price {
+		font-family: $font-stack-headings;
+		font-size: 2.4rem;
+		font-weight: bold;
+	}
+
+	.cart {
+		.quantity {
+			display: inline-block;
+		}
+
+		input,
+		button {
+			display: inline-block;
+			border: 2px solid $base-text-color;
+			background-color: $base-text-color;
+			color: $base-background-color;
+			line-height: 1.5;
+		}
+
+		input {
+			padding: 0.75em 0.5em;
+			text-align: right;
+
+			&:focus {
+				border-color: $color-4;
+			}
+		}
+
+		button {
+			padding: 0.75em 1em;
+			background-color: $color-3;
+			color: $base-text-color;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				border-color: $color-4;
+				color: $color-4;
+			}
+
+			&:active {
+				background-color: $base-text-color;
+				color: $color-3;
+			}
+		}
+	}
+}
+
+.woocommerce-product-details__short-description {
+	margin: 2rem 0;
+	font-size: 2rem;
+}
+
+.product_meta {
+	margin-top: 2rem;
+	color: $color-4;
+
+	a {
+		color: currentColor;
+	}
+
+	> span {
+		display: block;
+	}
+}

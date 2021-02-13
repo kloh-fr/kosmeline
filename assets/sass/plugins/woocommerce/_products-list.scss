@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/**
+ * @site         Kosméline
+ * @author       Luc Poupard
+ * @lastmodified 2020-12-29
+ * @note         Woocommerce
+ */
+
+.woocommerce-products-header {
+	margin: calc(#{$content-padding} / 2) $content-padding;
+}
+
+.woocommerce-result-count,
+.woocommerce-ordering {
+	margin: 0;
+	padding: 1rem $content-padding;
+	width: 49%;
+}
+
+.woocommerce-result-count {
+	float: left;
+}
+
+.woocommerce-ordering {
+	float: right;
+	text-align: right;
+}
+
+.products {
+	clear: both;
+	margin: 0;
+	list-style: none;
+
+	.archive & {
+		padding: $content-padding;
+	}
+
+	.product {
+		margin-top: 3rem;
+		border: 2px solid $color-3;
+		background-color: $color-3;
+		text-align: center;
+
+		&:hover {
+			border-color: $color-4;
+		}
+
+		&:focus-within {
+			border-color: $color-4;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.woocommerce-loop-product__link {
+		display: block;
+
+		.price {
+			margin: 1rem;
+			font-weight: bold;
+		}
+	}
+
+	.woocommerce-loop-category__title,
+	.woocommerce-loop-product__title {
+		margin: 1rem;
+		font-size: 2rem;
+		text-align: left;
+		line-height: 1.25;
+	}
+
+	.woocommerce-loop-category__title {
+		mark {
+			background-color: transparent;
+			color: currentColor;
+			font-weight: normal;
+		}
+	}
+
+	.woocommerce-product-details__short-description {
+		margin: 0 1rem 2rem 1rem;
+		text-align: left;
+		font-size: 1.6rem;
+	}
+
+	.product_type_simple.button {
+		display: inline-block;
+		margin: 1.5rem auto 2rem;
+		padding: 0.25em 0.5em 0.35em;
+		border: 2px solid $base-text-color;
+		background-color: $color-3;
+		color: $base-text-color;
+
+		&:hover,
+		&:focus {
+			border-color: $color-4;
+			color: $color-4;
+		}
+
+		&:active {
+			background-color: $base-text-color;
+			color: $color-3;
+		}
+	}
+}
+
+ul.products {
+	padding: 0;
+
+	li::before {
+		display: none;
+	}
+}
+
+@mixin products-list-large {
+	.products {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+@mixin products-list-2col {
+	.products {
+		.product {
+			width: calc((100% - 3rem) / 2);
+
+			&:not(:nth-child(2n)) {
+				margin-right: 3rem;
+			}
+
+			&:nth-child(1),
+			&:nth-child(2) {
+				.product {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@mixin products-list-3col {
+	.products {
+		.product {
+			width: calc((100% - 6rem) / 3);
+
+			&:not(:nth-child(3n)) {
+				margin-right: 3rem;
+			}
+
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				.product {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@mixin products-list-4col {
+	.products {
+		.product {
+			width: calc((100% - 9rem) / 4);
+
+			&:not(:nth-child(4n)) {
+				margin-right: 3rem;
+			}
+
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4) {
+				.product {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
