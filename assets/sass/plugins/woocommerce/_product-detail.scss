@@ -23,7 +23,8 @@
 
 	.woocommerce-product-gallery {
 		img {
-			border: 2px solid $color-4;
+			border-radius: 50%;
+			box-shadow: 0 0 em(20) rgba($base-text-color, 0.75);
 		}
 	}
 }
