@@ -108,11 +108,16 @@ body.menu-opened {
 		padding-top: 7rem;
 		background-color: $base-background-color;
 		z-index: 2;
-		display: none !important;
+		opacity: 0;
 		overflow-y: auto;
+		transform-origin: 0% 0%;
+		transform: translate(-100vw, 0);
+		transition: transform 0.75s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.75s;
 
 		.open & {
 			display: block !important;
+			opacity: 1;
+			transform: none;
 		}
 
 		&::before {
