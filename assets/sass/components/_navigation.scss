@@ -68,7 +68,9 @@
 	top: 0;
 	right: 4rem;
 	z-index: 3;
-	padding: 0.5rem 0.5rem 0.75rem;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.5rem 0.75rem 0.75rem;
 	height: 2.5em;
 	border: none;
 	background-color: $base-text-color;
@@ -96,6 +98,75 @@
 
 body.menu-opened {
 	overflow: hidden;
+}
+
+/**
+ * Icône burger
+ * Inspiré librement par https://jonsuh.com/hamburgers/
+ */
+.hamburger-box {
+	position: relative;
+	display: inline-block;
+	margin-right: 0.5em;
+	width: 1.8rem;
+	height: 1.6rem;
+}
+
+.hamburger-inner {
+	display: block;
+	margin-top: -0.1rem;
+	top: 50%;
+	transition-duration: 0.22s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+	&,
+	&::before,
+	&::after {
+		width: 1.8rem;
+		height: 0.2rem;
+		background-color: currentColor;
+		border-radius: 0.4rem;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+	}
+
+	&::before {
+		top: -0.6rem;
+		transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+	}
+
+	&::after {
+		bottom: -0.6rem;
+		transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+}
+
+.menu-opened {
+	.hamburger-inner {
+		transform: rotate(225deg);
+		transition-delay: 0.12s;
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+		&::before {
+			top: 0;
+			opacity: 0;
+			transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+		}
+
+		&::after {
+			bottom: 0;
+			transform: rotate(-90deg);
+			transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+		}
+	}
 }
 
 @mixin nav-small {
