@@ -56,6 +56,7 @@
 @media (min-width: em-mq(900)) {
 	@include skiplinks-large;
 	@include nav-large;
+	@include content-wrapper-large;
 	@include products-list-4col;
 	@include account-columns-large;
 }

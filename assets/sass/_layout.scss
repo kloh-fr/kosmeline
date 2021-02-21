@@ -101,7 +101,7 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 	top: 0;
 	z-index: 2;
 	background-color: $color-2;
-	border-bottom: 1px solid currentColor;
+	border-bottom: 2px solid currentColor;
 
 	.admin-bar & {
 		top: 46px;
@@ -241,7 +241,14 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 .site-content-wrapper {
 	padding: $content-padding;
 	border-bottom: 2px solid $base-text-color;
+	border-top: 2px solid $base-text-color;
 	background-color: $color-1;
+}
+
+@mixin content-wrapper-large {
+	.site-content-wrapper {
+		border-top: none;
+	}
 }
 
 /* -- @subsection Contenu ----------------------------- */
