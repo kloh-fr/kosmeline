@@ -148,6 +148,7 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 
 .site-header {
 	padding: $content-padding 2em;
+	text-align: center;
 
 	/**
 	 * Titre ou logo
@@ -170,18 +171,6 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 
 	&_logo {
 		width: 40rem;
-	}
-}
-
-@mixin header-small {
-	.site-header {
-		padding-right: 8rem;
-	}
-}
-
-@mixin header-large {
-	.site-header {
-		text-align: center;
 	}
 }
 
