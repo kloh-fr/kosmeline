@@ -14,16 +14,30 @@
 .woocommerce-ordering {
 	margin: 0;
 	padding: 1rem 0;
-	width: 49%;
-}
-
-.woocommerce-result-count {
-	float: left;
 }
 
 .woocommerce-ordering {
-	float: right;
-	text-align: right;
+	select {
+		display: inline-block;
+		width: auto;
+		max-width: 100%;
+	}
+}
+
+@mixin products-list-medium {
+	.woocommerce-result-count,
+	.woocommerce-ordering {
+		width: 49%;
+	}
+
+	.woocommerce-result-count {
+		float: left;
+	}
+
+	.woocommerce-ordering {
+		float: right;
+		text-align: right;
+	}
 }
 
 .products {
