@@ -148,13 +148,14 @@
 }
 
 .woocommerce-message {
+	position: relative;
 	margin: 2rem;
 	padding: 1rem 2rem;
 	border: 1px dashed $color-2;
 	background-color: $base-text-color;
 	color: $color-3;
 
-	a {
+	a:not(.button) {
 		color: currentColor;
 	}
 }
