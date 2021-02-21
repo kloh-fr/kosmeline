@@ -13,6 +13,7 @@
 	== Couleurs
 	== Fonts
 	== Dimensions
+	== WooCommerce
 */
 
 /* == @section @subsection Couleurs ==================== */
@@ -56,3 +57,6 @@ $size-h3: 24;
 $page-width: 1180;
 $content-padding: 4rem;
 $menu-item-padding-top: 1.25rem;
+
+/* == @section @subsection WooCommerce ==================== */
+$cart-count: 3rem;

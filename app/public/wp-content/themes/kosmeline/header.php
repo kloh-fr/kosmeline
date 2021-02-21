@@ -46,8 +46,15 @@
 <body <?php body_class(); ?> role="document" itemscope itemtype="https://schema.org/WebPage">
 	<?php wp_body_open(); ?>
 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" aria-hidden="true">
+		<symbol id="compte">
+			<circle cx="25" cy="12.1" r="12.1" />
+			<path d="M1.6 43.9c0 8.1 46.7 8.1 46.7 0 0-10.9-10.5-19.7-23.4-19.7S1.6 33.1 1.6 43.9z" />
+		</symbol>
 		<symbol id="fleche">
 			<path d="M47.1 13c-.1.1-.4.3-20.8 15.7l-1.3 1-1.3-1C5.4 14.9 3.1 13.1 2.9 13 1.4 11.8.5 11.7.3 11.7H.1c.1.2.3.5.6 1C16.6 35.4 21 38.1 22 38.4h6c1-.2 5.3-2.9 21.4-25.7.3-.5.5-.8.6-1h-.2c-.3-.1-1.2.1-2.7 1.3z" />
+		</symbol>
+		<symbol id="panier">
+			<path d="M48.5 11.7L10.6 7.1l-.6-4c-.1-.7-.6-1.2-1.3-1.4L2.1.1C1.2-.1.3.4.1 1.3c-.2.9.3 1.8 1.2 2l5.6 1.4.6 4.2 3.2 21.4.6 3.8c.4 2.5 2.5 4.3 4.9 4.3H45c.9 0 1.7-.7 1.7-1.7S45.9 35 45 35H16.2c-.8 0-1.5-.6-1.6-1.4l-.3-1.9h29c3.7 0 6.7-3 6.7-6.7V13.3c0-.8-.6-1.5-1.5-1.6zM18.3 40c-2.7 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zM41.7 40c-2.7 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.3-5-5-5z" />
 		</symbol>
 	</svg>
 
@@ -63,16 +70,25 @@
 
 			<div class="site-skiplinks--right">
 				<a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
-					<?php if( !is_user_logged_in() ) {
-						esc_html_e( 'Account', 'kosmeline' );
-					} else {
-						$current_user = wp_get_current_user();
+					<?php svg( 'compte', 16, 16 ); ?>
 
-						echo $current_user->user_firstname . ' ' . $current_user->user_lastname;
-					} ?>
+					<span>
+						<?php
+						if( !is_user_logged_in() ) {
+							esc_html_e( 'Sign in', 'kosmeline' );
+						} else {
+							esc_html_e( 'My account', 'kosmeline' );
+						}
+						?>
+					</span>
 				</a>
 				<a href="<?php echo wc_get_cart_url(); ?>" class="site-basket">
-					<?php esc_html_e( 'Basket', 'kosmeline' ); ?>
+					<?php svg( 'panier', 16, 16 ); ?>
+
+					<span>
+						<?php esc_html_e( 'Basket', 'kosmeline' ); ?>
+					</span>
+
 					<span class="cart-contents-count">
 						<?php echo sprintf ( _n( '%d <span>item</span>', '%d <span>items</span>', WC()->cart->get_cart_contents_count(), 'kosmeline' ), WC()->cart->get_cart_contents_count() ); ?>
 					</span>

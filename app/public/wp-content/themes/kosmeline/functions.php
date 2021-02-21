@@ -218,3 +218,11 @@ if ( is_admin() ) {
 	/* Désactiver le lien par défaut sur les images */
 	require get_template_directory() . '/functions/admin_img-default-link.php';
 }
+
+function svg( $id, $width, $height ) {
+	$svg = '<svg width="' . $width . '" height="' . $height .'" viewBox="0 0 50 50" class="svg-sprite" aria-hidden="true" focusable="false">
+		<use xlink:href="#' . $id . '" />
+	</svg>';
+
+	echo $svg;
+}

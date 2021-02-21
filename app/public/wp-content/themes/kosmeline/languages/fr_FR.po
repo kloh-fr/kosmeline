@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kosméline\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2021-02-06 18:23+0100\n"
-"PO-Revision-Date: 2021-02-06 18:24+0100\n"
+"POT-Creation-Date: 2021-02-21 10:52+0100\n"
+"PO-Revision-Date: 2021-02-21 10:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: Luc Poupard\n"
 "Language: fr_FR\n"
@@ -29,15 +29,6 @@ msgstr "Oups ! Vous n&rsquo;avez pas le droit d&rsquo;accéder à cette page."
 #: 401.php:23
 msgid "It looks like you need to be authenticated."
 msgstr "Il semblerait que vous deviez vous authentifier."
-
-#: 401.php:35 403.php:35 404.php:35
-msgid "Most Used Categories"
-msgstr "Catégories les plus utilisées"
-
-#: 401.php:53 403.php:53 404.php:53
-#, php-format
-msgid "Try looking in the monthly archives. %1$s"
-msgstr "Essayez de regarder dans les archives mensuelles. %1$s"
 
 #: 403.php:23
 msgid "It looks like you have to go elsewhere."
@@ -153,7 +144,7 @@ msgstr "Volume&nbsp;: "
 msgid "%1$s&nbsp;<abbr title=\"millilitres\">ml</abbr>"
 msgstr ""
 
-#: functions/front_woocommerce.php:209 header.php:77
+#: functions/front_woocommerce.php:209 header.php:93
 #, php-format
 msgid "%d <span>item</span>"
 msgid_plural "%d <span>items</span>"
@@ -168,27 +159,31 @@ msgstr "Conseils d&rsquo;utilisation"
 msgid "Composition"
 msgstr "Composition"
 
-#: header.php:59
+#: header.php:66
 msgid "Skip to navigation"
 msgstr "Aller à la navigation"
 
-#: header.php:60
+#: header.php:67
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: header.php:61
+#: header.php:68
 msgid "Skip to search"
 msgstr "Aller à la recherche"
 
-#: header.php:67
-msgid "Account"
-msgstr "Compte"
+#: header.php:78
+msgid "Sign in"
+msgstr "Connexion"
 
-#: header.php:75
+#: header.php:80 woocommerce/checkout/thankyou.php:36
+msgid "My account"
+msgstr "Mon compte"
+
+#: header.php:89
 msgid "Basket"
 msgstr "Panier"
 
-#: header.php:104
+#: header.php:120
 msgid "Menu"
 msgstr "Menu"
 
@@ -593,10 +588,6 @@ msgstr ""
 msgid "Pay"
 msgstr ""
 
-#: woocommerce/checkout/thankyou.php:36
-msgid "My account"
-msgstr ""
-
 #: woocommerce/checkout/thankyou.php:42 woocommerce/checkout/thankyou.php:84
 msgid "Thank you. Your order has been received."
 msgstr ""
@@ -937,38 +928,38 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:40
+#: woocommerce/myaccount/form-edit-account.php:39
 msgid "Display name"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:41
+#: woocommerce/myaccount/form-edit-account.php:40
 msgid ""
 "This will be how your name will be displayed in the account section and in "
 "reviews"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:46
+#: woocommerce/myaccount/form-edit-account.php:44
 #: woocommerce/myaccount/form-login.php:86
 msgid "Email address"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:52
+#: woocommerce/myaccount/form-edit-account.php:50
 msgid "Password change"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:55
+#: woocommerce/myaccount/form-edit-account.php:53
 msgid "Current password (leave blank to leave unchanged)"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:59
+#: woocommerce/myaccount/form-edit-account.php:57
 msgid "New password (leave blank to leave unchanged)"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:63
+#: woocommerce/myaccount/form-edit-account.php:61
 msgid "Confirm new password"
 msgstr ""
 
-#: woocommerce/myaccount/form-edit-account.php:73
+#: woocommerce/myaccount/form-edit-account.php:71
 msgid "Save changes"
 msgstr ""
 
@@ -1341,3 +1332,13 @@ msgstr ""
 #: woocommerce/single-product/up-sells.php:26
 msgid "You may also like&hellip;"
 msgstr ""
+
+#~ msgid "Most Used Categories"
+#~ msgstr "Catégories les plus utilisées"
+
+#, php-format
+#~ msgid "Try looking in the monthly archives. %1$s"
+#~ msgstr "Essayez de regarder dans les archives mensuelles. %1$s"
+
+#~ msgid "Account"
+#~ msgstr "Compte"

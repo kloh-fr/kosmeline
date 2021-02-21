@@ -20,6 +20,7 @@
 }
 
 @media (max-width: em-mq(659)) {
+	@include skiplinks-small;
 	@include product-detail-small;
 	@include woocommerce-table-small;
 	@include woocommerce-table-cart-small;
@@ -29,6 +30,7 @@
 }
 
 @media (min-width: em-mq(660)) {
+	@include skiplinks-medium;
 	@include product-detail-large;
 	@include woocommerce-table-large;
 	@include woocommerce-table-cart-large;

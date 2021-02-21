@@ -122,8 +122,10 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 	width: 100%;
 
 	a {
-		display: inline-block;
-		padding: 0.5rem 0.5rem 0.75rem;
+		display: inline-flex;
+		align-items: center;
+		padding: 0.5rem 1rem 0.75rem;
+		height: 2.5em;
 		text-decoration: none;
 
 		&:hover,
@@ -135,6 +137,57 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 		&.screen-reader-text:focus {
 			top: 0;
 			left: 0;
+		}
+
+		&.site-basket {
+			position: relative;
+			margin-left: 1em;
+			padding-right: #{$cart-count + 1rem};
+		}
+	}
+}
+
+.cart-contents-count {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0.5rem;
+	display: inline-block;
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+	background-color: $base-text-color;
+	color: $base-background-color;
+	text-align: center;
+	line-height: 1.75;
+
+	> span {
+		@extend .visually-hidden;
+	}
+}
+
+.site-basket {
+	&:hover,
+	&:focus {
+		.cart-contents-count {
+			background-color: $base-background-color;
+			color: $base-text-color;
+		}
+	}
+}
+
+@mixin skiplinks-small {
+	.site-skiplinks--right {
+		span:not([class]) {
+			@include visually-hidden;
+		}
+	}
+}
+
+@mixin skiplinks-medium {
+	.site-skiplinks--right {
+		.svg-sprite {
+			margin-right: 0.5em;
 		}
 	}
 }
