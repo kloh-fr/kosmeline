@@ -36,6 +36,8 @@
 	}
 
 	.product {
+		display: flex;
+		flex-direction: column;
 		margin-top: 3rem;
 		border: 2px solid $color-3;
 		background-color: $color-3;
@@ -55,7 +57,9 @@
 	}
 
 	.woocommerce-loop-product__link {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
 
 		.price {
 			margin: 1rem;
@@ -80,6 +84,7 @@
 	}
 
 	.woocommerce-product-details__short-description {
+		flex: 1;
 		margin: 0 1rem 2rem 1rem;
 		text-align: left;
 		font-size: 1.6rem;
