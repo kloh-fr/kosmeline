@@ -42,7 +42,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'woocommerce_cart_item_remove_link',
 						sprintf(
-							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+							'<a href="%1$s" class="remove remove_from_cart_button" aria-label="%2$s" title="%2$s" data-product_id="%3$s" data-cart_item_key="%4$s" data-product_sku="%5$s">' . svg( 'corbeille', 20, 20 ) . '</a>',
 							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 							esc_attr__( 'Remove this item', 'woocommerce' ),
 							esc_attr( $product_id ),

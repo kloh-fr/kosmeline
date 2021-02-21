@@ -224,5 +224,5 @@ function svg( $id, $width, $height ) {
 		<use xlink:href="#' . $id . '" />
 	</svg>';
 
-	echo $svg;
+	return $svg;
 }
