@@ -81,12 +81,11 @@
 	}
 }
 
-.woocommerce-tab {
-	margin-top: 2rem;
+.woocommerce-tabs {
+	margin: 2rem #{-$content-padding} #{-$content-padding} #{-$content-padding};
 }
 
 .woocommerce-Tabs-panel {
-	margin: 0 #{-$content-padding} #{-$content-padding} #{-$content-padding};
 	padding: calc(#{$content-padding} / 2) $content-padding;
 	background-color: $color-3;
 }
@@ -116,8 +115,12 @@
 	}
 }
 
-ul.wc-tabs li::before {
-	display: none;
+ul.wc-tabs {
+	padding-left: 0;
+
+	li::before {
+		display: none;
+	}
 }
 
 .entry-summary {
