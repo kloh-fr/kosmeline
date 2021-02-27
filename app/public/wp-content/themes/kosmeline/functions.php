@@ -193,7 +193,7 @@ require get_template_directory() . '/functions/front_title-attributes.php';
 // require get_stylesheet_directory() . '/functions/front_menu-classes.php';
 
 /* Ajustements pour WooCommerce */
-require get_stylesheet_directory() . '/functions/front_woocommerce.php';
+require get_template_directory() . '/functions/front_woocommerce.php';
 
 /* -- @subsection Administration -------------------- */
 /**
