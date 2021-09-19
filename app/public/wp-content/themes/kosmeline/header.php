@@ -118,7 +118,7 @@
 		</header>
 
 		<div id="site-menu">
-			<nav id=" site-navigation" class="site-navigation" role="navigation">
+			<nav id="site-navigation" class="site-navigation" role="navigation">
 				<button type="button" id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>

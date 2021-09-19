@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2021-02-13
+ * @lastmodified 2021-09-19
  * @note         Navigation
  */
 
@@ -35,9 +35,9 @@
 }
 
 /* Menu courant */
-.menu > .current_page_item,
-.menu > .current_page_parent,
-.menu > .current-menu-ancestor {
+.site-navigation .menu > .current_page_item,
+.site-navigation .menu > .current_page_parent,
+.site-navigation .menu > .current-menu-ancestor {
 	> a::after {
 		content: "";
 		position: absolute;
@@ -210,9 +210,9 @@ body.menu-opened {
 	}
 
 	/* Menu courant */
-	.menu > .current_page_item,
-	.menu > .current_page_parent,
-	.menu > .current-menu-ancestor {
+	.site-navigation .menu > .current_page_item,
+	.site-navigation .menu > .current_page_parent,
+	.site-navigation .menu > .current-menu-ancestor {
 		> a::after {
 			top: calc(1em - #{$menu-item-padding-top / 2});
 			left: calc(0.5rem + 1px);
@@ -260,9 +260,9 @@ body.menu-opened {
 	}
 
 	/* Menu courant */
-	.menu > .current_page_item,
-	.menu > .current_page_parent,
-	.menu > .current-menu-ancestor {
+	.site-navigation .menu > .current_page_item,
+	.site-navigation .menu > .current_page_parent,
+	.site-navigation .menu > .current-menu-ancestor {
 		> a::after {
 			bottom: calc(-1.5rem - 1px);
 			left: calc(50% - 1.5rem);
