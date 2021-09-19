@@ -31,7 +31,7 @@ $root-default-font-size: 16;
  * Valeurs possibles : 'double_top_single_bottom', 'single_top', 'single_bottom'
  * Calculs via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil
  */
-$vertical-rythm: "single_top";
+$vertical-rythm: "double_top_single_bottom";
 
 /* Fonctions Sass : pas touche ! */
 @function em($px, $base: $base-font) {
