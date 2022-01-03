@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2021-02-13
+ * @lastmodified 2022-01-03
  * @note         Layout
  */
 
@@ -301,17 +301,14 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 		}
 
 		.menu-item {
-			display: inline-block;
-
 			&:not(:first-child)::before {
 				content: "";
-				display: inline-block;
-				margin-right: 0.25em;
+				display: block;
+				margin: .25em auto 0 auto;
 				width: 1em;
 				height: 1em;
 				background-image: url("../img/etoile.svg");
 				background-size: 100%;
-				vertical-align: middle;
 			}
 		}
 	}
@@ -320,5 +317,29 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 	 * Informations sur le site : copyright, etc.
 	 */
 	&_info {
+	}
+}
+
+@mixin footer-small {
+	.site-footer {
+		&_separator {
+			display: block;
+			height: 0;
+			opacity: 0;
+		}
+	}
+}
+
+@mixin footer-large {
+	.site-footer {
+		.menu-item {
+			display: inline-block;
+
+			&:not(:first-child)::before {
+				display: inline-block;
+				margin: 0 .25em 0 0;
+				vertical-align: middle;
+			}
+		}
 	}
 }

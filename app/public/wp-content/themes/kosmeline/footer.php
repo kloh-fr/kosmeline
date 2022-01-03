@@ -26,7 +26,7 @@
 	</div>
 
 	<div class="site-footer_info">
-		&copy; <?php echo date( 'Y' ); ?> Kosméline · Impasse des Perdrix 6 · CH-1563 Dompierre
+		&copy; <?php echo date( 'Y' ); ?> Kosméline <span class="site-footer_separator" aria-hidden="true">·</span> Impasse des Perdrix 6 <span class="site-footer_separator" aria-hidden="true">·</span> CH-1563 Dompierre
 	</div>
 </footer>
 </div>

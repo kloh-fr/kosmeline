@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2021-02-13
+ * @lastmodified 2022-01-03
  * @note         Media queries
  */
 
@@ -21,6 +21,7 @@
 
 @media (max-width: em-mq(659)) {
 	@include skiplinks-small;
+	@include footer-small;
 	@include product-detail-small;
 	@include woocommerce-table-small;
 	@include woocommerce-table-cart-small;
@@ -31,6 +32,7 @@
 
 @media (min-width: em-mq(660)) {
 	@include skiplinks-medium;
+	@include footer-large;
 	@include products-list-medium;
 	@include product-detail-large;
 	@include woocommerce-table-large;
