@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kosméline\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2021-02-21 10:52+0100\n"
-"PO-Revision-Date: 2021-02-21 10:52+0100\n"
+"POT-Creation-Date: 2022-01-03 12:11+0100\n"
+"PO-Revision-Date: 2022-01-03 12:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: Luc Poupard\n"
 "Language: fr_FR\n"
@@ -144,7 +144,7 @@ msgstr "Volume&nbsp;: "
 msgid "%1$s&nbsp;<abbr title=\"millilitres\">ml</abbr>"
 msgstr ""
 
-#: functions/front_woocommerce.php:209 header.php:93
+#: functions/front_woocommerce.php:209 header.php:96
 #, php-format
 msgid "%d <span>item</span>"
 msgid_plural "%d <span>items</span>"
@@ -159,31 +159,31 @@ msgstr "Conseils d&rsquo;utilisation"
 msgid "Composition"
 msgstr "Composition"
 
-#: header.php:66
+#: header.php:69
 msgid "Skip to navigation"
 msgstr "Aller à la navigation"
 
-#: header.php:67
+#: header.php:70
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: header.php:68
+#: header.php:71
 msgid "Skip to search"
 msgstr "Aller à la recherche"
 
-#: header.php:78
+#: header.php:81
 msgid "Sign in"
 msgstr "Connexion"
 
-#: header.php:80 woocommerce/checkout/thankyou.php:36
+#: header.php:83 woocommerce/checkout/thankyou.php:36
 msgid "My account"
 msgstr "Mon compte"
 
-#: header.php:89
+#: header.php:92
 msgid "Basket"
 msgstr "Panier"
 
-#: header.php:120
+#: header.php:126
 msgid "Menu"
 msgstr "Menu"
 
@@ -348,7 +348,7 @@ msgid "Cart totals"
 msgstr ""
 
 #: woocommerce/cart/cart-totals.php:30 woocommerce/cart/cart-totals.php:31
-#: woocommerce/cart/cart.php:33 woocommerce/cart/cart.php:125
+#: woocommerce/cart/cart.php:33 woocommerce/cart/cart.php:129
 #: woocommerce/checkout/review-order.php:24
 #: woocommerce/checkout/review-order.php:56
 msgid "Subtotal"
@@ -370,7 +370,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: woocommerce/cart/cart.php:30 woocommerce/cart/cart.php:77
+#: woocommerce/cart/cart.php:30 woocommerce/cart/cart.php:79
 #: woocommerce/checkout/form-pay.php:27
 #: woocommerce/checkout/review-order.php:23
 #: woocommerce/emails/email-order-details.php:42
@@ -378,38 +378,38 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: woocommerce/cart/cart.php:31 woocommerce/cart/cart.php:97
+#: woocommerce/cart/cart.php:31 woocommerce/cart/cart.php:101
 #: woocommerce/emails/email-order-details.php:44
 msgid "Price"
 msgstr ""
 
-#: woocommerce/cart/cart.php:32 woocommerce/cart/cart.php:103
+#: woocommerce/cart/cart.php:32 woocommerce/cart/cart.php:107
 #: woocommerce/emails/email-order-details.php:43
 #: woocommerce/global/quantity-input.php:28
 msgid "Quantity"
 msgstr ""
 
-#: woocommerce/cart/cart.php:56 woocommerce/cart/mini-cart.php:47
+#: woocommerce/cart/cart.php:58 woocommerce/cart/mini-cart.php:47
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/cart.php:92
+#: woocommerce/cart/cart.php:96
 msgid "Available on backorder"
 msgstr ""
 
-#: woocommerce/cart/cart.php:143
+#: woocommerce/cart/cart.php:147
 msgid "Coupon:"
 msgstr ""
 
-#: woocommerce/cart/cart.php:143 woocommerce/checkout/form-coupon.php:34
+#: woocommerce/cart/cart.php:147 woocommerce/checkout/form-coupon.php:34
 msgid "Coupon code"
 msgstr ""
 
-#: woocommerce/cart/cart.php:143 woocommerce/checkout/form-coupon.php:38
+#: woocommerce/cart/cart.php:147 woocommerce/checkout/form-coupon.php:38
 msgid "Apply coupon"
 msgstr ""
 
-#: woocommerce/cart/cart.php:148
+#: woocommerce/cart/cart.php:152
 msgid "Update cart"
 msgstr ""
 
@@ -546,12 +546,12 @@ msgid "Date:"
 msgstr ""
 
 #: woocommerce/checkout/order-receipt.php:33
-#: woocommerce/checkout/thankyou.php:64
+#: woocommerce/checkout/thankyou.php:57
 msgid "Total:"
 msgstr ""
 
 #: woocommerce/checkout/order-receipt.php:38
-#: woocommerce/checkout/thankyou.php:70
+#: woocommerce/checkout/thankyou.php:63
 msgid "Payment method:"
 msgstr ""
 
@@ -590,9 +590,9 @@ msgstr ""
 
 #: woocommerce/checkout/thankyou.php:42 woocommerce/checkout/thankyou.php:84
 msgid "Thank you. Your order has been received."
-msgstr ""
+msgstr "Votre commande a bien été reçue."
 
-#: woocommerce/checkout/thankyou.php:58
+#: woocommerce/checkout/thankyou.php:70
 msgid "Email:"
 msgstr ""
 
@@ -612,7 +612,7 @@ msgstr ""
 msgid "Price:"
 msgstr ""
 
-#: woocommerce/content-widget-reviews.php:31
+#: woocommerce/content-widget-reviews.php:38
 #, php-format
 msgid "by %s"
 msgstr ""
@@ -690,9 +690,7 @@ msgid ""
 msgstr ""
 
 #: woocommerce/emails/customer-new-account.php:28
-#: woocommerce/emails/plain/customer-new-account.php:31
-#, php-format
-msgid "Your password has been automatically generated: %s"
+msgid "Click here to set your new password."
 msgstr ""
 
 #: woocommerce/emails/customer-note.php:29
@@ -809,6 +807,10 @@ msgstr ""
 #: woocommerce/emails/plain/email-order-details.php:46
 #: woocommerce/order/order-details.php:93
 msgid "Note:"
+msgstr ""
+
+#: woocommerce/emails/plain/customer-new-account.php:32
+msgid "To set your password, visit the following address: "
 msgstr ""
 
 #: woocommerce/emails/plain/email-order-details.php:23
@@ -981,7 +983,7 @@ msgid "Username"
 msgstr ""
 
 #: woocommerce/myaccount/form-login.php:99
-msgid "A password will be sent to your email address."
+msgid "A link to set a new password will be sent to your email address."
 msgstr ""
 
 #: woocommerce/myaccount/form-lost-password.php:25
