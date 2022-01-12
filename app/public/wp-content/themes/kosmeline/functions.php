@@ -6,7 +6,7 @@
  *
  * @author  Luc Poupard
  *
- * @package Kosméline 1.0.0
+ * @package Kosméline 1.0.4
  * @since   Kosméline 1.0.0
  */
 
@@ -89,7 +89,7 @@ function kosmeline_setup() {
 	 * On ajoute le support de WooCommerce
 	 * https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
 	 */
-	add_theme_support('woocommerce');
+	add_theme_support( 'woocommerce' );
 
 	/* -- @subsection Champs de formulaire HTML5 -------------------- */
 	/**

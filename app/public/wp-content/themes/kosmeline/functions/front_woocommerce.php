@@ -4,7 +4,7 @@
  *
  * @author  Luc Poupard
  *
- * @package Kosméline 1.0.0
+ * @package Kosméline 1.0.4
  * @since   Kosméline 1.0.0
  */
 
@@ -98,7 +98,6 @@ function wc_remove_link_on_thumbnails( $html ) {
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
 
-
 /**
  * Affichage de la description au lieu de la description courte
  */
@@ -125,6 +124,22 @@ function woocommerce_template_single_title_update() {
 	}
 
 	echo '</h1>';
+}
+
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title_update', 10 );
+function woocommerce_template_loop_product_title_update() {
+	$type = get_field( 'produit_type' );
+
+	echo '<h2 class="woocommerce-loop-product__title">';
+
+	if( $type ) {
+		echo $type . ' <span class="kosmeline-product-title">' . esc_html( get_the_title() ) . '</span>';
+	} else {
+		echo esc_html( get_the_title() );
+	}
+
+	echo '</h2>';
 }
 
 /**
@@ -178,23 +193,6 @@ add_filter( 'wc_product_sku_enabled', 'sv_remove_product_page_skus' );
  */
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_single_excerpt', 1 );
 
-
-remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title_update', 10 );
-function woocommerce_template_loop_product_title_update() {
-	$type = get_field( 'produit_type' );
-
-	echo '<h2 class="woocommerce-loop-product__title">';
-
-	if( $type ) {
-		echo $type . ' <span class="kosmeline-product-title">' . esc_html( get_the_title() ) . '</span>';
-	} else {
-		echo esc_html( get_the_title() );
-	}
-
-	echo '</h2>';
-}
-
 /**
  * Montrer le panier (contenu + mise à jour AJAX)
  * @link https://docs.woocommerce.com/document/show-cart-contents-total/
@@ -215,27 +213,27 @@ function woo_cart_but_count( $fragments ) {
 }
 
 /**
- * Remove product data tabs
+ * Supprimer les onglets Descriptions et Additional information
  * @link https://docs.woocommerce.com/document/editing-product-data-tabs/
  */
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 function woo_remove_product_tabs( $tabs ) {
-    unset( $tabs['description'] ); // Remove the description tab
-    // unset( $tabs['reviews'] ); // Remove the reviews tab
-    unset( $tabs['additional_information'] ); // Remove the additional information tab
+	unset( $tabs['description'] ); // Description
+	// unset( $tabs['reviews'] ); // Reviews
+	unset( $tabs['additional_information'] ); // Additional information
 
-    return $tabs;
+	return $tabs;
 }
 
 /**
- * Add a custom product data tab
- * Default tabs priority
+ * Ajouter des onglets personalisés
+ * Priorité des onglets par défaut
  * - Description: 10
  * - Additional information: 20
  * - Reviews: 30
  */
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
-// Adds the new tab
+// Ajouter les nouveaux onglets
 function woo_new_product_tab( $tabs ) {
 	$advice = get_field( 'produit_utilisation' );
 	$composition = get_field( 'produit_composition' );
@@ -259,7 +257,7 @@ function woo_new_product_tab( $tabs ) {
 	return $tabs;
 }
 
-// The new tab content
+// Contenus des nouveaux onglets
 function woo_advice_product_tab_content() {
 	$advice = get_field( 'produit_utilisation' );
 
@@ -275,7 +273,7 @@ function woo_composition_product_tab_content() {
 }
 
 /**
- * Remove Downloads entry from account links
+ * Supprimer le menu Downloads dans le compte
  * @link https://wordpress.org/support/topic/remove-downloads-from-account-page/#post-11057329
  */
 add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
