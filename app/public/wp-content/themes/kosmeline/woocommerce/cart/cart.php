@@ -43,8 +43,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-					// Get product type from ACF field `produit_type`
-					$product_type = get_field( 'produit_type', $product_id );
 					?>
 					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
@@ -79,11 +77,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
 						<?php
 						if ( ! $product_permalink ) {
-							// echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $product_type . ' <span class="kosmeline-product-title">' . $_product->get_name() . '</span>' , $cart_item, $cart_item_key ) . '&nbsp;' );
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 						} else {
-							// echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '%s <a href="%s">%s</a>', $product_type, esc_url( $product_permalink ), '<span class="kosmeline-product-title">' . $_product->get_name() . '</span>'  ), $cart_item, $cart_item_key ) );
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 						}
 
 						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );

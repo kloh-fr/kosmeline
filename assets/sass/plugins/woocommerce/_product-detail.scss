@@ -30,7 +30,10 @@
 }
 
 .kosmeline-product-title {
-	display: block;
+	.product_title &,
+	.woocommerce-loop-product__title & {
+		display: block;
+	}
 
 	&::before {
 		content: "\0000AB\0000A0";

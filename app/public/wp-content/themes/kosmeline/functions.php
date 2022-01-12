@@ -155,7 +155,7 @@ function kosmeline_styles() {
 		'all',
 		get_stylesheet_directory_uri() . '/css/styles.min.css',
 		false,
-		'202102131105',
+		'202201121727',
 		'all'
 	);
 
