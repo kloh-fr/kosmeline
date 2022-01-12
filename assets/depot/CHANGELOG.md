@@ -1,5 +1,13 @@
 # Kosméline - Changelog
 
+## 1.0.4
+
+12 janvier 2022
+
+* Ajout : type de produit dans le nom du produit (pas seulement dans le panier)
+* Changement : mise à jour templates WooCommerce 6.1.0
+* Changement : nettoyage des fonctions du thème
+
 ## 1.0.3
 
 3 janvier 2022
