@@ -4,7 +4,7 @@
  *
  * @author  Luc Poupard
  *
- * @package Kosméline 1.0.4
+ * @package Kosméline 1.0.5
  * @since   Kosméline 1.0.0
  */
 
@@ -162,7 +162,7 @@ function woocommerce_order_item_name_update( $item_name, $item, $false ){
 	$type = get_field( 'produit_type', $item['product_id'] );
 
 	if( $type ) {
-		return $type . '&laquo;&nbsp;' . $item_name . '&nbsp;&raquo;';
+		return $type . ' &laquo;&nbsp;' . $item_name . '&nbsp;&raquo;';
 	}
 
 	return $item_name;

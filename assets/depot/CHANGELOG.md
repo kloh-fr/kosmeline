@@ -1,5 +1,11 @@
 # Kosméline - Changelog
 
+## 1.0.5
+
+13 janvier 2022
+
+* Correction : espace entre le type et le nom du produit dans les e-mails
+
 ## 1.0.4
 
 12 janvier 2022
