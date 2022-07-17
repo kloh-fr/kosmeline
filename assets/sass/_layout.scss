@@ -95,6 +95,13 @@ svg[aria-hidden="true"]:not(.svg-sprite) {
 	}
 }
 
+@media (prefers-reduced-motion: reduce) {
+	#sky {
+		animation: unset;
+		transform: translate(-50%, -50%);
+	}
+}
+
 /* == @section Entête ==================== */
 .site-skiplinks-wrapper {
 	position: sticky;
