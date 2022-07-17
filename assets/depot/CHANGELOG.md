@@ -1,5 +1,13 @@
 # Kosméline - Changelog
 
+## 1.0.6
+
+17 juillet 2022
+
+* Ajout : version simple des événements
+* Changement : désactivation de l'animation du fond de page selon les préférences utilisateur
+* Changement : mise à jour templates WooCommerce 6.7.0
+
 ## 1.0.5
 
 13 janvier 2022
