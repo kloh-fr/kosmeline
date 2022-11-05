@@ -1,5 +1,11 @@
 # Kosméline - Changelog
 
+## 1.0.7
+
+5 novembre 2022
+
+* Changement : mise à jour templates WooCommerce 7.0.1
+
 ## 1.0.6
 
 17 juillet 2022
