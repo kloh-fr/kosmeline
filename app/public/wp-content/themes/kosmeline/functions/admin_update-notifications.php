@@ -6,7 +6,7 @@
  *
  * @link    http://www.screenfeed.fr/blog/personnaliser-administration-wordpress-0327/
  *
- * @package Kosméline 1.0.0
+ * @package Kosméline 1.0.9
  * @since   Kosméline 1.0.0
  */
 

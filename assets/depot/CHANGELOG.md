@@ -1,5 +1,11 @@
 # Kosméline - Changelog
 
+## 1.0.9
+
+14 janvier 2023
+
+* Correction : fonction `create_function()` dépréciée
+
 ## 1.0.8
 
 14 janvier 2023
