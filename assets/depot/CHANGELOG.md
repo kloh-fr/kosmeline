@@ -1,5 +1,15 @@
 # Kosméline - Changelog
 
+## 1.1.0
+
+15 avril 2023
+
+* Ajout : type de contenu Événements
+* Ajout : type de contenu Revendeurs
+* Changement : mise à jour templates WooCommerce 7.5.0
+* Changement : création d'un répertoire template
+* Changement : déplacement du template sitemap dans le répertoire template
+
 ## 1.0.9
 
 14 janvier 2023
