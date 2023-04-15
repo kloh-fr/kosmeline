@@ -7,6 +7,7 @@
  * @author  Luc Poupard
  *
  * @package Kosméline 1.0.4
+ * @package Kosméline 1.1.0
  * @since   Kosméline 1.0.0
  */
 
@@ -28,6 +29,7 @@
 	== Ajout des styles du thème
 	== Fonctions externalisées
 		-- Global
+		-- Custom Post Types
 		-- Front
 		-- Administration
 */
@@ -178,6 +180,10 @@ require get_template_directory() . '/functions/global_admin-bar.php';
 
 /* Gérer des pages d'erreurs personnalisées */
 require get_template_directory() . '/functions/global_error-pages.php';
+
+/* -- @subsection Custom Post Types -------------------- */
+/* Événements */
+require get_template_directory() . '/functions/cpt_event.php';
 
 /* -- @subsection Front -------------------- */
 /**

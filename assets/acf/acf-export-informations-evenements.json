@@ -1,0 +1,97 @@
+[
+    {
+        "key": "group_6415c6925ba1a",
+        "title": "Informations événement",
+        "fields": [
+            {
+                "key": "field_6415c6f666f46",
+                "label": "Dates",
+                "name": "dates",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_6415c72d66f47",
+                        "label": "Date de début",
+                        "name": "date_debut",
+                        "aria-label": "",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "display_format": "j F Y",
+                        "return_format": "Ymd",
+                        "first_day": 1
+                    },
+                    {
+                        "key": "field_6415c76d66f48",
+                        "label": "Date de fin",
+                        "name": "date_fin",
+                        "aria-label": "",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "display_format": "j F Y",
+                        "return_format": "Ymd",
+                        "first_day": 1
+                    }
+                ]
+            },
+            {
+                "key": "field_6415c7aa66f4a",
+                "label": "Lien de l'événement",
+                "name": "lien",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "event"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]
