@@ -6,7 +6,6 @@
  *
  * @author  Luc Poupard
  *
- * @package Kosméline 1.0.4
  * @package Kosméline 1.1.0
  * @since   Kosméline 1.0.0
  */
@@ -184,6 +183,9 @@ require get_template_directory() . '/functions/global_error-pages.php';
 /* -- @subsection Custom Post Types -------------------- */
 /* Événements */
 require get_template_directory() . '/functions/cpt_event.php';
+
+/* Revendeurs */
+require get_template_directory() . '/functions/cpt_reseller.php';
 
 /* -- @subsection Front -------------------- */
 /**

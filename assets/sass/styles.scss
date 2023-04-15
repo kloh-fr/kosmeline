@@ -2,7 +2,7 @@
 /**
  * @site         Kosméline
  * @author       Luc Poupard
- * @lastmodified 2022-07-17
+ * @lastmodified 2023-04-15
  */
 
 /* ----------------------------- */
@@ -41,6 +41,7 @@
 /* == @section Composants ==================== */
 @import "components/navigation";
 @import "components/events";
+@import "components/resellers";
 
 /* == @section Extensions ==================== */
 @import "plugins/woocommerce/global";
