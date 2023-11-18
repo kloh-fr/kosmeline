@@ -89,8 +89,8 @@ const zipIgnoreGlob = [
 	'!./app/public/wp-content/themes/kosmeline/css/styles.css',
 	'!./app/public/wp-content/themes/kosmeline/css/styles.css.map',
 	'!./app/public/wp-content/themes/kosmeline/js/custom.js',
-	'!./app/public/wp-content/themes/twentytwentythree/**/*',
-	'!./app/public/wp-content/themes/twentytwentythree',
+	'!./app/public/wp-content/themes/twentytwentyfour/**/*',
+	'!./app/public/wp-content/themes/twentytwentyfour',
 	'!./app/public/wp-content/themes/index.php',
 ];
 
