@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
+ * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Auth
- * @version 4.3.0
+ * @version 8.8.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -41,6 +41,13 @@ defined( 'ABSPATH' ) || exit;
 		<li><?php echo esc_html( $permission ); ?></li>
 	<?php endforeach; ?>
 </ul>
+
+<p>
+	<?php
+	/* Translators: %1$s App name, %2$s scope. */
+	printf( esc_html__( 'This will give "%1$s" %2$s access which will allow it to:', 'woocommerce' ), '<strong>' . esc_html( $app_name ) . '</strong>', '<strong>' . esc_html( $scope ) . '</strong>' );
+	?>
+</p>
 
 <div class="wc-auth-logged-in-as">
 	<?php echo get_avatar( $user->ID, 70 ); ?>
