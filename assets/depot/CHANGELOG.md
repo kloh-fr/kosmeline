@@ -1,5 +1,11 @@
 # Kosméline - Changelog
 
+## 1.1.6
+
+1 juin 2025
+
+* Changement : mise à jour templates WooCommerce 9.8.5
+
 ## 1.1.5
 
 5 avril 2025
