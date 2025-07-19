@@ -14,7 +14,7 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 9.4.0
+ * @version 10.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'woocommerce_cart_item_remove_link',
 						sprintf(
-							'<a href="%1$s" class="remove remove_from_cart_button" aria-label="%2$s" title="%2$s" data-product_id="%3$s" data-cart_item_key="%4$s" data-product_sku="%5$s" data-success_message="%s">' . svg( 'corbeille', 20, 20 ) . '</a>',
+							'<a role="button" href="%1$s" class="remove remove_from_cart_button" aria-label="%2$s" title="%2$s" data-product_id="%3$s" data-cart_item_key="%4$s" data-product_sku="%5$s" data-success_message="%s">' . svg( 'corbeille', 20, 20 ) . '</a>',
 							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 							/* translators: %s is the product name */
 							esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),
