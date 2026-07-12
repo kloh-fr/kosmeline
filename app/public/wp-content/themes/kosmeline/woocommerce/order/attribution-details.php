@@ -116,7 +116,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php echo esc_html( $meta['utm_content'] ); ?>
 			</span>
 		<?php endif; ?>
-
+		
 		<?php if ( array_key_exists( 'utm_term', $meta ) ) : ?>
 			<h4>
 				<?php esc_html_e( 'Term', 'woocommerce' ); ?>
@@ -125,7 +125,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php echo esc_html( $meta['utm_term'] ); ?>
 			</span>
 		<?php endif; ?>
-
+		
 		<?php if ( array_key_exists( 'utm_id', $meta ) ) : ?>
 			<h4>
 				<?php esc_html_e( 'ID', 'woocommerce' ); ?>

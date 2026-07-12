@@ -78,7 +78,7 @@ $email_improvements_enabled = FeaturesUtil::feature_is_enabled( 'email_improveme
 						}
 					}
 					?>
-				<?php if ( 'download-product' === $column_id ) : ?>
+					<?php if ( 'download-product' === $column_id ) : ?>
 						</th>
 					<?php else : ?>
 						</td>
