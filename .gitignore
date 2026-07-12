@@ -46,6 +46,7 @@ node_modules/
 *.sql
 *.sqlite
 *.env
+*.envrc
 
 # OS generated files #
 ######################
